@@ -7,7 +7,7 @@ type FooterLink = {
 const footerLinks: FooterLink[] = [
   {
     label: "Terms & License",
-    url: "/term-license",
+    url: "",
   },
   {
     label: "Github Profile",

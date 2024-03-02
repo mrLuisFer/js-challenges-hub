@@ -7,6 +7,12 @@ export enum Levels {
   advanced = "advanced",
 }
 
+export const tags = {
+  html: "HTML",
+  css: "CSS",
+  js: "JS",
+};
+
 export type Level = `${Levels}`;
 
 export const challengesInitialState: Challenge[] = [
@@ -14,7 +20,7 @@ export const challengesInitialState: Challenge[] = [
     title: "Age Calculator",
     description:
       "This challenge is designed to sharpen your JavaScript and form validation skills. Working with dates in JavaScript can be tricky, so this will be a nice test!",
-    tags: ["HTML", "CSS", "JS"],
+    tags: [tags.html, tags.css, tags.js],
     level: Levels.junior,
     image:
       "https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/jmzygkuazktqtg2akkkx.jpg",
@@ -24,7 +30,7 @@ export const challengesInitialState: Challenge[] = [
     title: "Interactive Comments Section",
     description:
       "This is project will put your JavaScript skills to the test. We provide a JSON file to pull the data, but it's also a perfect project to build as a full-stack CRUD app!",
-    tags: ["HTML", "CSS", "JS"],
+    tags: [tags.html, tags.css, tags.js],
     level: Levels.intermediate,
     image:
       "https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/v9wskl4mnbt5gbxm4o2r.jpg",
@@ -34,7 +40,7 @@ export const challengesInitialState: Challenge[] = [
     title: "QR code component",
     description:
       "A perfect first challenge if you are new to HTML and CSS. The card layout does not shift, so it is ideal if you have not learned about building responsive layouts yet.",
-    tags: ["HTML", "CSS"],
+    tags: [tags.html, tags.css],
     level: Levels.newbie,
     route: "/qr-card",
     image:

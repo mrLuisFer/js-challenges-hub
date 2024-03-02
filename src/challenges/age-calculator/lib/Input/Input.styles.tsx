@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 150px;
 `;
 
 export const InputLabelStyled = styled.label<{ hasError: boolean }>`

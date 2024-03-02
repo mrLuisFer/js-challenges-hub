@@ -2,10 +2,7 @@ import { useChallengesStore } from "../../lib/stores/challengesStore";
 import ChallengeCard from "./ChallengeCard";
 
 export default function ChallengesRender() {
-  const { challenges, challengesQuery } = useChallengesStore();
-  const filteredChallenges = challenges.filter((challenge) => {
-    return challenge.title.toLowerCase().includes(challengesQuery);
-  });
+  const { challenges, filteredChallenges } = useChallengesStore();
 
   return (
     <section className="px-8 pt-12 pb-24 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">

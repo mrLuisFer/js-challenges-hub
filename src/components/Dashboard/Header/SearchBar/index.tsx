@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useChallengesStore } from "../../../../lib/stores/challengesStore";
 import { useSearchParams } from "react-router-dom";
 
@@ -7,20 +7,45 @@ enum Searchable {
 }
 
 export default function SearchBar() {
-  const { setQueryChallenges, challengesQuery } = useChallengesStore();
+  const {
+    setQueryChallenges,
+    challengesQuery,
+    challenges,
+    setFilteredChallenges,
+  } = useChallengesStore();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const filterByTitle = useCallback(() => {
+    return challenges.filter((challenge) => {
+      return challenge.title.toLowerCase().includes(challengesQuery);
+    });
+  }, [challenges, challengesQuery]);
 
   const handleFilterChallenges = () => {
     const query = searchParams.get(Searchable.queryTitle);
-    if (!query) return;
+    if (!query) {
+      setFilteredChallenges(challenges);
+      return;
+    }
     setQueryChallenges(query);
+    const filteredChallenges = filterByTitle();
+    setFilteredChallenges(filteredChallenges);
   };
 
   useEffect(() => {
     const query = searchParams.get(Searchable.queryTitle);
     if (!query) return;
     setQueryChallenges(query);
-  }, [searchParams, setQueryChallenges]);
+    const filteredChallenges = filterByTitle();
+    setFilteredChallenges(filteredChallenges);
+  }, [
+    challenges,
+    challengesQuery,
+    filterByTitle,
+    searchParams,
+    setFilteredChallenges,
+    setQueryChallenges,
+  ]);
 
   return (
     <form
@@ -37,9 +62,13 @@ export default function SearchBar() {
         className="bg-[var(--app-blue)] p-2 rounded-lg outline-none transition border-2 border-transparent focus-visible:border-[var(--app-yellow)] leading-3 h-[32px] w-full max-w-60"
         value={challengesQuery}
         onChange={({ target: { value } }) => {
+          setQueryChallenges(value);
           searchParams.set(Searchable.queryTitle, value);
           setSearchParams(searchParams);
-          setQueryChallenges(value);
+          if (!value || !value.length) {
+            setFilteredChallenges(challenges);
+            return;
+          }
         }}
       />
       <button

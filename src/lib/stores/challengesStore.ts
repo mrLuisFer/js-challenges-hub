@@ -6,6 +6,8 @@ type Store = {
   challenges: Challenge[];
   challengesQuery: string;
   setQueryChallenges: (query: string) => void;
+  filteredChallenges: Challenge[];
+  setFilteredChallenges: (filteredChallenges: Challenge[]) => void;
 };
 
 export const useChallengesStore = create<Store>()((set) => ({
@@ -13,5 +15,9 @@ export const useChallengesStore = create<Store>()((set) => ({
   challengesQuery: "",
   setQueryChallenges: (query) => {
     set(() => ({ challengesQuery: query }));
+  },
+  filteredChallenges: challengesInitialState,
+  setFilteredChallenges: (filteredChallenges) => {
+    set(() => ({ filteredChallenges }));
   },
 }));

@@ -1,15 +1,19 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import BackToDashboardBtn from "../BackToDashboardBtn";
 
 export default function Header() {
-  const navigate = useNavigate()
+  const location = useLocation();
+  const title = location.pathname.replace("/", "").split("-").join(" ");
 
   return (
-    <header className="flex py-4 px-8">
-      <button className="bg-[var(--app-yellow)] transition p-2 rounded-lg transform active:scale-95 capitalize filter hover:brightness-95" onClick={() => {
-        navigate('/')
-      }}>
-        Back to all challenges
-      </button>
+    <header className="flex py-2 px-8 justify-between items-center">
+      <BackToDashboardBtn />
+      <div>
+        <div className="flex items-center gap-2">
+          <span>Challenge:</span>
+          <h1 className="font-bold text-xl capitalize font-serif">{title}</h1>
+        </div>
+      </div>
     </header>
   );
 }
