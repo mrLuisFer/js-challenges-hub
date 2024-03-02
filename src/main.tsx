@@ -1,20 +1,12 @@
-import React, { PropsWithChildren } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { CommentsProvider } from "./challenges/interactive-comments/context/CommentsContext.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AgeCalculator, InteractiveComments } from "./challenges";
-import "./css/global.css";
 import App from "./App.tsx";
-import Header from "./components/Global/Header/index.tsx";
-
-const ChallengeContaier = ({ children }: PropsWithChildren) => {
-  return (
-    <>
-      <Header />
-      {children}
-    </>
-  );
-};
+import { AgeCalculator, InteractiveComments } from "./challenges";
+import { CommentsProvider } from "./challenges/interactive-comments/context/CommentsContext.tsx";
+import RouteContainer from "./components/RouteContainer.tsx";
+import "./css/global.css";
 
 const router = createBrowserRouter([
   {
@@ -24,25 +16,26 @@ const router = createBrowserRouter([
   {
     path: "/interactive-comments",
     element: (
-      <ChallengeContaier>
+      <RouteContainer>
         <InteractiveComments />
-      </ChallengeContaier>
+      </RouteContainer>
     ),
   },
   {
     path: "/age-calculator",
     element: (
-      <ChallengeContaier>
+      <RouteContainer>
         <AgeCalculator />
-      </ChallengeContaier>
+      </RouteContainer>
     ),
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <StrictMode>
     <CommentsProvider>
       <RouterProvider router={router} />
     </CommentsProvider>
-  </React.StrictMode>
+    <Analytics />
+  </StrictMode>
 );
