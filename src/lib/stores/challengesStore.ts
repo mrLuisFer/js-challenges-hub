@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { Challenge } from "../../components/ChallengeCard";
-import { challengesInitialState } from "./challenges";
+import { Challenge } from "../../components/Dashboard/ChallengeCard";
+import { challengesInitialState } from "../../constants/challenges";
 
 type Store = {
   challenges: Challenge[];

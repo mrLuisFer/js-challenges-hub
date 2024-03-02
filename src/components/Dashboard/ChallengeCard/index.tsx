@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { Level } from "../../../constants/challenges";
 
-type Level = "junior" | "intermediate" | "advanced";
 export type Challenge = {
   title: string;
   description: string;

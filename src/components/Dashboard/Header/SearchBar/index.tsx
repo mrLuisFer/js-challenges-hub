@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useChallengesStore } from "../../../lib/stores/challengesStore";
+import { useChallengesStore } from "../../../../lib/stores/challengesStore";
 import { useSearchParams } from "react-router-dom";
 
 enum Searchable {
@@ -24,7 +24,7 @@ export default function SearchBar() {
 
   return (
     <form
-      className="flex items-center gap-4 justify-end"
+      className="flex items-center gap-4 justify-center md:justify-end w-full md:w-auto"
       onSubmit={(submitEvent) => {
         submitEvent.preventDefault();
         handleFilterChallenges();
@@ -34,7 +34,7 @@ export default function SearchBar() {
         type="text"
         name="search"
         id="search"
-        className="bg-[var(--app-blue)] p-2 rounded-lg outline-none transition border-2 border-transparent focus-visible:border-[var(--app-yellow)] leading-3 h-[32px]"
+        className="bg-[var(--app-blue)] p-2 rounded-lg outline-none transition border-2 border-transparent focus-visible:border-[var(--app-yellow)] leading-3 h-[32px] w-full max-w-60"
         value={challengesQuery}
         onChange={({ target: { value } }) => {
           searchParams.set(Searchable.queryTitle, value);
