@@ -1,9 +1,9 @@
-import jsonData from "../data";
+import jsonData from '../data';
 
 export const useGetUser = () => {
-  const user = jsonData.currentUser;
+	const user = jsonData.currentUser;
 
-  return {
-    user,
-  };
+	return {
+		user,
+	};
 };

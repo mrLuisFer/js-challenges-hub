@@ -1,16 +1,16 @@
-import { AgeLabelStyled } from "./AgeLabel.styles";
+import { AgeLabelStyled } from './AgeLabel.styles';
 
 export default function AgeLabel({
-  value = "--",
-  label = "",
+	value = '--',
+	label = '',
 }: {
-  value?: number | string;
-  label: string;
+	value?: number | string;
+	label: string;
 }) {
-  return (
-    <AgeLabelStyled>
-      {value !== undefined ? <p>{value}</p> : <p>--</p>}
-      <label>{label}</label>
-    </AgeLabelStyled>
-  );
+	return (
+		<AgeLabelStyled>
+			{value !== undefined ? <p>{value}</p> : <p>--</p>}
+			<label>{label}</label>
+		</AgeLabelStyled>
+	);
 }

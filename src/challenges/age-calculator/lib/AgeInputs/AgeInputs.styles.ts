@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AgesContainerStyled = styled.section`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
 `;
