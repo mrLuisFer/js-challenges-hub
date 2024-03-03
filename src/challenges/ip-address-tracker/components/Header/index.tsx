@@ -1,5 +1,5 @@
 import patternBgDesktop from '../../images/pattern-bg-desktop.png';
-import Input from './Input';
+import Form from './Form';
 
 export default function Header() {
 	return (
@@ -11,7 +11,7 @@ export default function Header() {
 			/>
 			<div className="min-w-80 flex items-center justify-center flex-col gap-6">
 				<h1 className="text-white font-bold font-['Rubik'] text-3xl">IP Address Tracker</h1>
-				<Input />
+				<Form />
 			</div>
 		</header>
 	);

@@ -4,8 +4,9 @@ import { validateIsIpAddress } from '../../utils/isIpAddress';
 import { useMapStore } from '../../../lib/store/useMapStore';
 import { LatLngExpression } from 'leaflet';
 import { getIpAddress } from '../../../lib/api/getIpAddress';
+import Input from './Input';
 
-export default function Input() {
+export default function Form() {
 	const [inputValue, setInputValue] = useState<string | undefined>('');
 	const { setData, map } = useMapStore();
 
@@ -32,16 +33,7 @@ export default function Input() {
 
 	return (
 		<form className="flex h-11" onSubmit={handleSubmitIp}>
-			<input
-				type="text"
-				height="h-full"
-				className="outline-none w-[450px] rounded-l-lg py-2 pl-6"
-				placeholder="Search for any IP address or domain"
-				value={inputValue}
-				onChange={({ target: { value } }) => {
-					setInputValue(value);
-				}}
-			/>
+			<Input value={inputValue} setValue={setInputValue} />
 			<button className="bg-[var(--very-dark-gray)] w-12 flex items-center justify-center rounded-r-lg filter hover:brightness-95 active:brightness-90 transition">
 				<img src={iconArrow} alt="Search" />
 			</button>

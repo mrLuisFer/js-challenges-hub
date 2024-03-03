@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Map from './components/Map';
-import Searcher from './components/Searcher';
+import IpInfo from './components/IpInfo';
 
 export default function IpAddressTracker() {
 	useEffect(() => {
@@ -19,7 +19,7 @@ export default function IpAddressTracker() {
 	return (
 		<div className="relative">
 			<Header />
-			<Searcher />
+			<IpInfo />
 			<Map />
 		</div>
 	);

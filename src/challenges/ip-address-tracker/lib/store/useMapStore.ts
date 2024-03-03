@@ -1,30 +1,26 @@
 import { create } from 'zustand';
-import { LatLngExpression } from 'leaflet';
-import { Map as MapLeaflet } from 'leaflet';
+import { MapStore } from '../../types/MapStore';
+import { Location } from '../../types/Location';
 
-type MapStore = {
-	data: LatLngExpression;
-	setData: (newData: LatLngExpression) => void;
-	map: MapLeaflet | null;
-	setMap: (map: MapLeaflet | null) => void;
-	userLocation: Location | undefined;
-	setUserLocation: (data: Location) => void;
+const userLocationExample: Location = {
+	isp: 'SpaceX Starlink',
+	ip: '192.212.174.101',
+	location: {
+		timezone: 'UTC -05:00',
+		city: 'Brooklyn, NY',
+		postalCode: '10001',
+		lat: 40.674054,
+		lng: -73.943156,
+	},
 };
+
 export const useMapStore = create<MapStore>()((set) => ({
-	data: {
-		lat: 20.51395,
-		lng: -83.842029,
-	},
-	setData: (newData) => {
-		if (!newData) return;
-		set(() => ({ data: newData }));
-	},
 	map: null,
 	setMap: (map) => {
 		if (!map) return;
 		set(() => ({ map }));
 	},
-	userLocation: undefined,
+	userLocation: userLocationExample,
 	setUserLocation: (data) => {
 		if (!data) return;
 		set(() => ({ userLocation: data }));
