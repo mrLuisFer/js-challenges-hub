@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useChallengesStore } from '../../../../lib/stores/challengesStore';
-import { Searchable } from 'lib/enums/Searchable';
+import { Searchable } from '../../../../lib/enums/Searchable';
 
 export default function SearchBar() {
 	const { setQueryChallenges, challengesQuery, challenges, setFilteredChallenges } =

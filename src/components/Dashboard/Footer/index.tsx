@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { AllRoutes } from 'lib/enums/AllRoutes';
-import { FooterLink } from 'lib/types/FooterLink';
+import { FooterLink } from '../../../lib/types/FooterLink';
+import { AllRoutes } from '../../../lib/enums/AllRoutes';
 
 const footerLinks: FooterLink[] = [
 	{

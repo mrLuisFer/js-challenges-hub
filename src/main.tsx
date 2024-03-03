@@ -7,7 +7,7 @@ import RouteContainer from './components/Dashboard/RouteContainer';
 import { routes, staticRoutes } from './constants/routes';
 import './css/global.css';
 import ErrorNotFound from './routes/ErrorNotFound';
-import { Route } from 'lib/types/Route';
+import { Route } from './lib/types/Route';
 
 function mapRoutes(paramRoutes: Route[], withContainer = true) {
 	return paramRoutes.map((route) => {
