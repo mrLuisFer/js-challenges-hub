@@ -8,6 +8,7 @@ import { routes, staticRoutes } from './constants/routes';
 import './css/global.css';
 import ErrorNotFound from './routes/ErrorNotFound';
 import { Route } from './lib/types/Route';
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 function mapRoutes(paramRoutes: Route[], withContainer = true) {
 	return paramRoutes.map((route) => {
@@ -25,12 +26,15 @@ function mapRoutes(paramRoutes: Route[], withContainer = true) {
 }
 
 const router = createBrowserRouter(mapRoutes(routes).concat(mapRoutes(staticRoutes, false)));
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<CommentsProvider>
-			<RouterProvider router={router} />
-		</CommentsProvider>
+		<QueryClientProvider client={queryClient}>
+			<CommentsProvider>
+				<RouterProvider router={router} />
+			</CommentsProvider>
+		</QueryClientProvider>
 		<Analytics />
 	</StrictMode>
 );
