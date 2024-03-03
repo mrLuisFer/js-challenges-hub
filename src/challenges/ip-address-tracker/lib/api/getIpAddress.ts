@@ -1,4 +1,4 @@
-const apiKey = 'at_vHT9FPrB92PiJRn09kgUcHOVcTaVD';
+const apiKey = import.meta.env.IP_KEY ?? '';
 const apiUrl = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}`;
 import axios from 'axios';
 import { Location } from '../../types/Location';

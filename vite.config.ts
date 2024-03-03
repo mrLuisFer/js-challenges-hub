@@ -15,6 +15,8 @@ export default defineConfig({
 		rollupCommonPlugin(),
 	],
 	define: {
+		'process.env': process.env,
 		__APP_ENV__: process.env.VITE_VERCEL_ENV,
+		IP_KEY: process.env.IP_KEY,
 	},
 });
