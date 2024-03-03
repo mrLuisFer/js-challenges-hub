@@ -15,11 +15,6 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
-		"baseUrl": "./src",
-		"paths": {
-			"@challenges/*": ["./src/challenges"],
-			"@lib/*": ["./src/lib"]
-		},
 		"target": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"allowJs": false,
