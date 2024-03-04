@@ -6,12 +6,12 @@ export default function Header() {
 	const title = location.pathname.replace('/', '').split('-').join(' ');
 
 	return (
-		<header className="flex py-2 px-8 justify-between items-center">
+		<header className="flex py-2 px-2 sm:px-8 justify-between items-center">
 			<BackToDashboardBtn />
 			<div>
-				<div className="flex items-center gap-2">
+				<div className="flex items-start md:gap-2 flex-col text-xs md:text-md">
 					<span>Challenge:</span>
-					<h1 className="font-bold text-xl capitalize font-serif">{title}</h1>
+					<h1 className="font-bold text-lg md:text-xl capitalize font-serif">{title}</h1>
 				</div>
 			</div>
 		</header>

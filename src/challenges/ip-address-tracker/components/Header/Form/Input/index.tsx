@@ -11,7 +11,7 @@ export default function Input({
 		<input
 			type="text"
 			height="h-full"
-			className="outline-none w-[450px] rounded-l-lg py-2 pl-6"
+			className="outline-none w-full md:w-[450px] rounded-l-lg py-2 pl-6 text-sm md:text-md"
 			placeholder="Search for any IP address or domain"
 			value={inputValue}
 			role="combobox"

@@ -8,7 +8,7 @@ import Input from './Input';
 
 export default function Form() {
 	const [inputValue, setInputValue] = useState<string | undefined>('');
-	const { setData, map } = useMapStore();
+	const { map, setUserLocation } = useMapStore();
 
 	const handleSubmitIp = async (e: FormEvent) => {
 		e.preventDefault();
@@ -23,7 +23,7 @@ export default function Form() {
 					lat: data?.location?.lat,
 					lng: data?.location?.lng,
 				};
-				setData(mapData);
+				setUserLocation(data);
 				map?.setView(mapData, 13);
 			}
 		} catch (error) {
@@ -32,7 +32,7 @@ export default function Form() {
 	};
 
 	return (
-		<form className="flex h-11" onSubmit={handleSubmitIp}>
+		<form className="flex h-11 w-80 md:w-auto mx-auto md:m-0" onSubmit={handleSubmitIp}>
 			<Input value={inputValue} setValue={setInputValue} />
 			<button className="bg-[var(--very-dark-gray)] w-12 flex items-center justify-center rounded-r-lg filter hover:brightness-95 active:brightness-90 transition">
 				<img src={iconArrow} alt="Search" />
