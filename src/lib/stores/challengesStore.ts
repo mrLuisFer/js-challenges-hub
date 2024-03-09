@@ -4,9 +4,9 @@ import { Store } from '../types/Store';
 
 export const useChallengesStore = create<Store>()((set) => ({
 	challenges: challengesInitialState,
-	challengesQuery: '',
+	queryChallenges: '',
 	setQueryChallenges: (query) => {
-		set(() => ({ challengesQuery: query }));
+		set(() => ({ queryChallenges: query }));
 	},
 	filteredChallenges: challengesInitialState,
 	setFilteredChallenges: (filteredChallenges) => {

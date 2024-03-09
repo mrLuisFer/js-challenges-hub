@@ -51,3 +51,7 @@ export const challengesInitialState: Challenge[] = [
 			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/ld4kxbjoxpqpjenak8w6.jpg',
 	},
 ];
+
+export const challengesTitles = challengesInitialState.map((challenge) => {
+	return challenge.title;
+});

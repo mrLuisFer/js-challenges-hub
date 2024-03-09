@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FooterLink } from '../../../lib/types/FooterLink';
 import { AllRoutes } from '../../../lib/enums/AllRoutes';
+import { FiExternalLink } from 'react-icons/fi';
 
 const footerLinks: FooterLink[] = [
 	{
@@ -21,7 +22,17 @@ export default function Footer() {
 					<img src="/favicon-mentor.png" alt="frontend-mentor" />
 					<div className="flex flex-col">
 						<span className="text-sm opacity-55">Challenges from</span>
-						<span className="font-semibold">© Frontend Mentor</span>
+						<a
+							href="https://www.frontendmentor.io"
+							className="hover:text-yellow-100"
+							target="_blank"
+							rel="noreferrer noopener"
+						>
+							<span className="font-semibold flex items-center gap-2">
+								© Frontend Mentor
+								<FiExternalLink />
+							</span>
+						</a>
 					</div>
 				</div>
 				<div className="flex items-center gap-6">

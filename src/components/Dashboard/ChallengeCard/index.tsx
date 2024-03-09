@@ -25,7 +25,7 @@ export default function ChallengeCard({
 				/>
 				<div className="p-4 flex flex-col gap-2">
 					<div className="flex items-center justify-between flex-wrap gap-2">
-						<h2 className="text-2xl font-serif">{challenge.title}</h2>
+						<h2 className="text-2xl font-serif capitalize">{challenge.title}</h2>
 						<span className="text-xs p-1 bg-[var(--app-dark-blue)] rounded-lg uppercase hover:bg-[var(--app-yellow)] hover:text-[var(--app-dark-blue)] transition">
 							{challenge.level}
 						</span>
