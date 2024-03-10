@@ -50,6 +50,16 @@ export const challengesInitialState: Challenge[] = [
 		image:
 			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/ld4kxbjoxpqpjenak8w6.jpg',
 	},
+	{
+		title: 'REST Countries API with color theme switcher',
+		description:
+			'If you are wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.',
+		tags: [tags.html, tags.css, tags.js, tags.api],
+		level: Levels.intermediate,
+		route: AllRoutes.restCountries,
+		image:
+			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/wirxeocmd6tpnn9c5oqc.jpg',
+	},
 ];
 
 export const challengesTitles = challengesInitialState.map((challenge) => {

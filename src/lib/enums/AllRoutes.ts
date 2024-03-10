@@ -6,4 +6,5 @@ export enum AllRoutes {
 	all = '*',
 	terms = '/terms-license',
 	ipAddress = '/ip-tracker',
+	restCountries = '/rest-countries',
 }

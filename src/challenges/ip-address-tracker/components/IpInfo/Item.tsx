@@ -4,7 +4,7 @@ export default function Item({ label, value }: { label: string; value?: string }
 			<span className="text-[var(--dark-gray)] font-bold text-sm uppercase text-center md:text-left">
 				{label}
 			</span>
-			<p className="text-[var(--very-dark-gray)] font-bold text-xl md:text-2xl max-w-48 text-center md:text-left">
+			<p className="text-[var(--ip-very-dark-gray)] font-bold text-xl md:text-2xl max-w-48 text-center md:text-left">
 				{value}
 			</p>
 		</div>

@@ -1,5 +1,5 @@
 import App from '../App';
-import { AgeCalculator, InteractiveComments, QrCard } from '../challenges';
+import { AgeCalculator, InteractiveComments, QrCard, RestCountriesApi } from '../challenges';
 import IpAddressTracker from '../challenges/ip-address-tracker';
 import { AllRoutes } from '../lib/enums/AllRoutes';
 import { Route } from '../lib/types/Route';
@@ -19,6 +19,7 @@ export const routes: Route[] = [
 		Element: <QrCard />,
 	},
 	{ path: AllRoutes.ipAddress, Element: <IpAddressTracker /> },
+	{ path: AllRoutes.restCountries, Element: <RestCountriesApi /> },
 ];
 
 export const staticRoutes: Route[] = [

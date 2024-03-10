@@ -4,6 +4,7 @@ import AgePreview from './lib/AgePreview/AgePreview';
 import { CardStyled, TextCardStyled } from './index.styles';
 import { useState } from 'react';
 import { TDate, NewDate } from './types';
+import './styles.css';
 
 export default function AgeCalculator() {
 	const [date, setDate] = useState<TDate>({

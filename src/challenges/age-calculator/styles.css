@@ -1,0 +1,14 @@
+:root {
+	/* Age Calculator */
+	--age-mobile: 375px;
+	--age-desktop: 1440px;
+	--age-purple: hsl(259, 100%, 65%);
+	--age-light-red: hsl(0, 100%, 67%);
+	--age-white: hsl(0, 0%, 100%);
+	--age-off-white: hsl(0, 0%, 94%);
+	--age-light-grey: hsl(0, 0%, 86%);
+	--age-smokey-grey: hsl(0, 1%, 44%);
+	--age-off-black: hsl(0, 0%, 8%);
+	--age-font-size-inputs: 32px;
+	--age-font-family: 'Poppins', sans-serif;
+}

@@ -15,47 +15,11 @@
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 16px;
 
-	/* Interactive Comments */
-	--comments-moderate-blue: hsl(238, 40%, 52%);
-	--comments-soft-red: hsl(358, 79%, 66%);
-	--comments-light-grayish-blue: hsl(239, 57%, 85%);
-	--comments-pale-red: hsl(357, 100%, 86%);
-	--comments-dark-blue: hsl(212, 24%, 26%);
-	--comments-grayish-blue: hsl(211, 10%, 45%);
-	--comments-light-gray: hsl(223, 19%, 93%);
-	--comments-very-light-gray: hsl(228, 33%, 97%);
-	--comments-white: hsl(0, 0%, 100%);
-	--comments-font-size: 16px;
-	--comments-font-family: 'Rubik', sans-serif;
-
-	/* Age Calculator */
-	--age-mobile: 375px;
-	--age-desktop: 1440px;
-	--age-purple: hsl(259, 100%, 65%);
-	--age-light-red: hsl(0, 100%, 67%);
-	--age-white: hsl(0, 0%, 100%);
-	--age-off-white: hsl(0, 0%, 94%);
-	--age-light-grey: hsl(0, 0%, 86%);
-	--age-smokey-grey: hsl(0, 1%, 44%);
-	--age-off-black: hsl(0, 0%, 8%);
-	--age-font-size-inputs: 32px;
-	--age-font-family: 'Poppins', sans-serif;
-
 	/* Dashboard App Colors */
 	--app-blue: #0f1623;
 	--app-dark-blue: rgb(10, 8, 22);
 	--app-yellow: #f4c48d;
 	--app-white: #ffffff;
-
-	/* Qr Card */
-	--qr-white: hsl(0, 0%, 100%);
-	--qr-light-gray: hsl(212, 45%, 89%);
-	--qr-grayish-blue: hsl(220, 15%, 55%);
-	--qr-dark-blue: hsl(218, 44%, 22%);
-
-	/* IP Address */
-	--very-dark-gray: hsl(0, 0%, 17%);
-	--dark-gray: hsl(0, 0%, 59%);
 }
 
 * {
