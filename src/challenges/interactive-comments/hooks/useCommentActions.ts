@@ -67,7 +67,6 @@ export const useCommentActions = ({ comment, as = 'comment' }: UseCommentActions
 			}
 			return c;
 		});
-		console.log(updatedComments);
 		if (updatedComments) {
 			setComments?.(updatedComments);
 		}
