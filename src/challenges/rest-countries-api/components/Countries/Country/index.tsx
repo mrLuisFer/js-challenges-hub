@@ -1,22 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Country } from '../../../types/Api';
 import { AllRoutes } from '../../../../../lib/enums/AllRoutes';
-import CountryLabel from './CountryLabel';
-import { useMemo } from 'react';
+import CountryLabel from '../../CountryLabel';
+import { sanitizeText } from '../../../../../utils/sanitizeText';
+import { useNumberFormat } from '../../../hooks/useNumberFormat';
 
 export default function Country({ country }: { country: Country }) {
-	const countryPopulation = useMemo(() => {
-		if (!country.population) return undefined;
-		const formattedPopulation = new Intl.NumberFormat('en-IN', {
-			maximumSignificantDigits: 3,
-		}).format(country.population);
-		if (formattedPopulation) return formattedPopulation;
-		return undefined;
-	}, [country.population]);
+	const sanitizedName = sanitizeText(country.name);
+	const countryPopulation = useNumberFormat(country.population);
 
-	// console.log(country);
 	return (
-		<Link to={`${AllRoutes.restCountries}/${country.name}`}>
+		<Link to={`${AllRoutes.restCountries}/${sanitizedName}`}>
 			<div className="w-72 mx-auto transition shadow-md hover:shadow-lg rounded-lg dark:border dark:border-transparent dark:hover:border-[var(--rest-very-dark-blue)]">
 				<img
 					src={country.flag}
