@@ -31,10 +31,7 @@ export default function RegionFilter() {
 	}, [regionSelected]);
 
 	const handleClickRegionFilter = (region: string) => {
-		const filteredCountries = api?.filter((country) => {
-			console.log({ country, region });
-			return country.region === region;
-		});
+		const filteredCountries = api?.filter((country) => country.region === region);
 		setRegionSelected(region);
 		setCountries(filteredCountries);
 		setIsOpen(false);

@@ -8,7 +8,7 @@ export default function IpAddressTracker() {
 		if (navigator.geolocation) {
 			navigator.permissions
 				.query({ name: 'geolocation' })
-				.then((result) => console.log(result))
+				.then((result) => console.info(result))
 				.catch((e) => console.error(e));
 		} else {
 			console.error('Geolocation is not supported');
