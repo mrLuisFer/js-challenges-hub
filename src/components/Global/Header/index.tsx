@@ -11,7 +11,9 @@ export default function Header() {
 			<div>
 				<div className="flex items-start md:gap-2 flex-col text-xs md:text-md">
 					<span>Challenge:</span>
-					<h1 className="font-bold text-lg md:text-xl capitalize font-serif">{title}</h1>
+					<h1 className="font-bold text-base sm:text-lg md:text-xl capitalize font-serif">
+						{title}
+					</h1>
 				</div>
 			</div>
 		</header>

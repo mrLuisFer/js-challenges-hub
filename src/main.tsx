@@ -6,7 +6,7 @@ import { CommentsProvider } from './challenges/interactive-comments/context/Comm
 import RouteContainer from './components/Dashboard/RouteContainer';
 import { routes, staticRoutes } from './constants/routes';
 import './css/global.css';
-import ErrorNotFound from './routes/ErrorNotFound';
+import ErrorNotFound from './components/Global/ErrorNotFound';
 import { Route } from './lib/types/Route';
 
 function mapRoutes(paramRoutes: Route[], withContainer = true) {
@@ -19,6 +19,7 @@ function mapRoutes(paramRoutes: Route[], withContainer = true) {
 			) : (
 				<>{route.Element}</>
 			),
+			children: route.children ?? [],
 		};
 		return routeObj;
 	});

@@ -1,4 +1,4 @@
-import BackToDashboardBtn from '../components/Global/BackToDashboardBtn';
+import BackToDashboardBtn from './BackToDashboardBtn';
 
 export default function ErrorNotFound() {
 	return (

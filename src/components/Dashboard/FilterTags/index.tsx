@@ -21,7 +21,7 @@ export default function FilterTags() {
 	};
 
 	return (
-		<section className="px-8 pt-4 flex items-start gap-4">
+		<section className="px-8 pt-4 flex items-start gap-4 justify-center sm:justify-start">
 			<p className="font-semibold text-sm opacity-60">Filter by tags:</p>
 			{tagsList.map((tag) => {
 				const isSelected = tagSelected === tag;

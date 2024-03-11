@@ -6,10 +6,9 @@ import IpInfo from './components/IpInfo';
 export default function IpAddressTracker() {
 	useEffect(() => {
 		if (navigator.geolocation) {
-			console.log(navigator);
 			navigator.permissions
 				.query({ name: 'geolocation' })
-				.then((result) => console.log(result))
+				.then((result) => console.info(result))
 				.catch((e) => console.error(e));
 		} else {
 			console.error('Geolocation is not supported');

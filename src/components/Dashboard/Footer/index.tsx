@@ -16,8 +16,8 @@ const footerLinks: FooterLink[] = [
 
 export default function Footer() {
 	return (
-		<div className="absolute bottom-0 left-0 w-full bg-[var(--app-blue)] max-h-20">
-			<div className="max-w-5xl mx-auto px-8 py-4 flex justify-between items-center">
+		<div className="absolute bottom-0 left-0 w-full bg-[var(--app-blue)] max-h-28 sm:max-h-20">
+			<div className="max-w-5xl mx-auto px-8 py-4 flex justify-between sm:items-center flex-col sm:flex-row gap-4 sm:gap-0">
 				<div className="flex items-center gap-4">
 					<img src="/favicon-mentor.png" alt="frontend-mentor" />
 					<div className="flex flex-col">
