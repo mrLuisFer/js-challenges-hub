@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerStyled = styled.main`
-	background-color: var(--qr-light-gray);
+	background-color: #d6e2f0;
 	font-family: 'Outfit', sans-serif;
 	display: flex;
 	justify-content: center;
@@ -11,7 +11,7 @@ export const ContainerStyled = styled.main`
 
 export const CardContainerStyled = styled.div`
 	width: 315px;
-	background-color: var(--qr-white);
+	background-color: #fff;
 	display: block;
 	border-radius: 20px;
 	padding: 1.5rem;

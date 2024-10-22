@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useGetUser } from '../../hooks/useGetUser';
 import { useCommentActions } from '../../hooks/useCommentActions';
 import {
@@ -11,6 +11,7 @@ import {
 	ReplyTextareaStyled,
 } from './Reply.styles';
 import { AsComment, Comment } from '../../types/index.types';
+import { CommentsContext } from '../../context/CommentsContext';
 
 export default function Reply({ as = 'comment', comment }: { as?: AsComment; comment?: Comment }) {
 	const [value, setValue] = useState('');
@@ -20,11 +21,14 @@ export default function Reply({ as = 'comment', comment }: { as?: AsComment; com
 		as,
 		comment,
 	});
+	const { setIsReplying } = useContext(CommentsContext);
 
 	function handleSendReply() {
 		if (!value) return;
-		if (isReply) handleAddReply(value);
-		else if (as === 'comment') handleAddComment(value);
+		if (isReply) {
+			handleAddReply(value);
+			if (setIsReplying) setIsReplying(false);
+		} else if (as === 'comment') handleAddComment(value);
 		setValue('');
 	}
 

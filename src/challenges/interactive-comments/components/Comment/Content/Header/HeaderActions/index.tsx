@@ -9,18 +9,18 @@ import {
 } from './HeaderActions.styles';
 import { useEditingComment } from '../../../../../hooks/useEditingComment';
 import { AsComment, Comment } from '../../../../../types/index.types';
+import { useContext } from 'react';
+import { CommentsContext } from '../../../../../context/CommentsContext';
 
 export default function HeaderActions({
 	as,
 	comment,
 	setIsEditing,
-	setIsReplying,
 	isEditing,
 }: {
 	as: AsComment;
 	comment: Comment;
 	setIsEditing: (value: boolean) => void;
-	setIsReplying: (value: boolean | ((prevState: boolean) => boolean)) => void;
 	isEditing: boolean;
 }) {
 	const { handleDeleteComment, isAuthor } = useCommentActions({ comment, as });
@@ -31,6 +31,7 @@ export default function HeaderActions({
 		setIsEditing,
 		isEditing,
 	});
+	const { setIsReplying } = useContext(CommentsContext);
 
 	return (
 		<>
@@ -48,7 +49,7 @@ export default function HeaderActions({
 			) : (
 				<CommentHeaderReplyButtonStyled
 					onClick={() => {
-						setIsReplying((prevState) => !prevState);
+						if (setIsReplying) setIsReplying((prevState) => !prevState);
 					}}
 				>
 					<img src={iconReply} alt="icon-reply" loading="lazy" />

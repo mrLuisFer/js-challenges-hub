@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Country } from '../../../types/Api';
+import { Country as CountryType } from '../../../types/Api';
 import { AllRoutes } from '../../../../../lib/enums/AllRoutes';
 import CountryLabel from '../../CountryLabel';
 import { sanitizeText } from '../../../../../utils/sanitizeText';
 import { useNumberFormat } from '../../../hooks/useNumberFormat';
 
-export default function Country({ country }: { country: Country }) {
+export default function Country({ country }: { country: CountryType }) {
 	const sanitizedName = sanitizeText(country.name);
 	const countryPopulation = useNumberFormat(country.population);
 

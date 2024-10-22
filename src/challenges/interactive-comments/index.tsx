@@ -19,7 +19,7 @@ export const Comments = styled.ul`
 `;
 
 const Container = styled.div`
-	background-color: var(--comments-very-light-gray);
+	background-color: rgb(222, 222, 222);
 	display: flex;
 	justify-content: center;
 	align-items: center;
