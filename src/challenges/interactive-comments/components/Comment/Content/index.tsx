@@ -9,15 +9,7 @@ import HeaderActions from './Header/HeaderActions';
 import { DesktopHidden } from '../../Reply/Reply.styles';
 import { AsComment, Comment } from '../../../types/index.types';
 
-export default function Content({
-	comment,
-	as,
-	setIsReplying,
-}: {
-	comment: Comment;
-	as: AsComment;
-	setIsReplying: (value: boolean | ((prevState: boolean) => boolean)) => void;
-}) {
+export default function Content({ comment, as }: { comment: Comment; as: AsComment }) {
 	const [isEditing, setIsEditing] = useState<boolean>(false);
 
 	const { isAuthor } = useCommentActions({ comment, as });
@@ -32,13 +24,7 @@ export default function Content({
 
 	return (
 		<CommentContentStyled>
-			<Header
-				comment={comment}
-				as={as}
-				isEditing={isEditing}
-				setIsEditing={setIsEditing}
-				setIsReplying={setIsReplying}
-			/>
+			<Header comment={comment} as={as} isEditing={isEditing} setIsEditing={setIsEditing} />
 			<TextContent
 				isEditing={isEditing}
 				comment={comment}
@@ -52,7 +38,6 @@ export default function Content({
 						comment={comment}
 						isEditing={isEditing}
 						setIsEditing={setIsEditing}
-						setIsReplying={setIsReplying}
 					/>
 				</CommentContentFooterStyled>
 			</DesktopHidden>

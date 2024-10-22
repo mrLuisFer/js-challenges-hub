@@ -1,7 +1,7 @@
 :root {
 	/* Qr Card */
 	--qr-white: hsl(0, 0%, 100%);
-	--qr-light-gray: hsl(212, 45%, 89%);
+	--qr-light-gray: #b1bdca;
 	--qr-grayish-blue: hsl(220, 15%, 55%);
 	--qr-dark-blue: hsl(218, 44%, 22%);
 }

@@ -1,5 +1,6 @@
-import { useChallengesStore } from '../../lib/stores/challengesStore';
-import ChallengeCard from './ChallengeCard';
+import { useChallengesStore } from '../../../lib/stores/challengesStore';
+import ChallengeCard from '../ChallengeCard';
+import NotFound from './NotFound';
 
 export default function ChallengesRender() {
 	const { challenges, filteredChallenges } = useChallengesStore();
@@ -11,9 +12,7 @@ export default function ChallengesRender() {
 					<ChallengeCard key={index} challengeInfo={challenge} index={index} />
 				))
 			) : (
-				<div className="flex items-center justify-center h-full w-full mt-20">
-					<h2 className="text-2xl font-bold animate-pulse">Challenges not found!</h2>
-				</div>
+				<NotFound />
 			)}
 		</section>
 	);

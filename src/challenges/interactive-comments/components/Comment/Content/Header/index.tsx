@@ -15,13 +15,11 @@ export default function Header({
 	as,
 	setIsEditing,
 	isEditing,
-	setIsReplying,
 }: {
 	comment: Comment;
 	as: AsComment;
 	setIsEditing: (value: boolean) => void;
 	isEditing: boolean;
-	setIsReplying: (value: boolean | ((prevState: boolean) => boolean)) => void;
 }) {
 	const username = comment.user.username;
 	const { isAuthor } = useCommentActions({ comment, as });
@@ -45,7 +43,6 @@ export default function Header({
 					as={as}
 					comment={comment}
 					setIsEditing={setIsEditing}
-					setIsReplying={setIsReplying}
 					isEditing={isEditing}
 				/>
 			</MobileHidden>

@@ -9,7 +9,8 @@ export const CommentStyled = styled.li<{
 	display: flex;
 	align-items: flex-start;
 	gap: 15px;
-	background-color: var(--comments-white);
+	background-color: #fff;
+	border: 1px solid #fafafa;
 	transition: 0.2s ease;
 	padding: 10px;
 	max-width: ${(props) => (props.asProp === 'comment' ? '330px' : '290px')};
@@ -18,6 +19,7 @@ export const CommentStyled = styled.li<{
 
 	&:hover {
 		box-shadow: 0.2px 0.2px 2px 0.5px var(--comments-light-gray);
+		border-color: #ccc;
 	}
 
 	@media (${queries.tablet}) {
