@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
-import { StrictMode } from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
 import { CommentsProvider } from './challenges/interactive-comments/context/CommentsContext';

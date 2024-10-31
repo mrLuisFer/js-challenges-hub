@@ -1,4 +1,4 @@
-import { Dispatch, PropsWithChildren, createContext, useState } from 'react';
+import React, { Dispatch, PropsWithChildren, createContext, useState } from 'react';
 import jsonData from '../data';
 import { Comment } from '../types/index.types';
 

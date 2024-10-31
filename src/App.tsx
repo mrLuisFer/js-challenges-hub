@@ -5,7 +5,7 @@ import Header from './components/Dashboard/Header';
 
 export default function App() {
 	return (
-		<div className="bg-[var(--app-dark-blue)] min-h-screen text-white relative">
+		<div className="bg-slate-100 min-h-screen relative">
 			<div className="max-w-5xl mx-auto">
 				<Header />
 				<FilterTags />
