@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useGetUser } from '../../hooks/useGetUser';
 import { useCommentActions } from '../../hooks/useCommentActions';
 import {
