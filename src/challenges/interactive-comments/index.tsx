@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CommentsContext } from './context/CommentsContext';
+import { CommentsContext, CommentsProvider } from './context/CommentsContext';
 import CommentsSection from './components/CommentsSection';
 import Reply from './components/Reply';
 import styled from 'styled-components';
@@ -35,18 +35,20 @@ const Container = styled.div`
 	}
 `;
 
-function App() {
+function InteractiveComments() {
 	const { comments } = useContext(CommentsContext);
 
 	return (
-		<Container>
-			<Comments>
-				{comments &&
-					comments?.map((comment) => <CommentsSection comment={comment} key={comment.id} />)}
-			</Comments>
-			<Reply />
-		</Container>
+		<CommentsProvider>
+			<Container>
+				<Comments>
+					{comments &&
+						comments?.map((comment) => <CommentsSection comment={comment} key={comment.id} />)}
+				</Comments>
+				<Reply />
+			</Container>
+		</CommentsProvider>
 	);
 }
 
-export default App;
+export default InteractiveComments;
