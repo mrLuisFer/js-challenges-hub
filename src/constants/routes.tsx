@@ -1,6 +1,11 @@
 import App from '../App';
-import { AgeCalculator, InteractiveComments, QrCard, RestCountriesApi } from '../challenges';
-import IpAddressTracker from '../challenges/ip-address-tracker';
+import {
+	AgeCalculator,
+	InteractiveComments,
+	QrCard,
+	RestCountriesApi,
+	IpAddressTracker,
+} from '../challenges';
 import DetailView from '../challenges/rest-countries-api/detail';
 import { AllRoutes } from '../lib/enums/AllRoutes';
 import { Route } from '../lib/types/Route';
