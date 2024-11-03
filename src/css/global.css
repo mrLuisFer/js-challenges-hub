@@ -17,7 +17,9 @@
 	font-family: 'Nunito Sans', sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	font-variation-settings: 'wdth' 100, 'YTLC' 500;
+	font-variation-settings:
+		'wdth' 100,
+		'YTLC' 500;
 
 	/* Dashboard App Colors */
 	--app-blue: #0f1623;
@@ -35,7 +37,7 @@ body {
 }
 
 @layer base {
-  :root {
+	:root {
 		--background: 0 0% 100%;
 		--foreground: 222.2 84% 4.9%;
 		--card: 0 0% 100%;
@@ -62,7 +64,7 @@ body {
 		--chart-5: 27 87% 67%;
 		--radius: 0.5rem;
 	}
-  .dark {
+	.dark {
 		--background: 222.2 84% 4.9%;
 		--foreground: 210 40% 98%;
 		--card: 222.2 84% 4.9%;
@@ -91,10 +93,10 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+	* {
+		@apply border-border;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }

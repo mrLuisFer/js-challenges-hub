@@ -1,18 +1,19 @@
 import React, { Dispatch, PropsWithChildren, createContext, useState } from 'react';
-import jsonData from '../data';
 import { Comment } from '../types/index.types';
+import { useCommentsStore } from '@/challenges/interactive-comments/store/commentsStore.ts';
 
 interface CommentsContextProps {
 	comments: Comment[] | undefined;
-	setComments: Dispatch<React.SetStateAction<Comment[]>> | undefined;
+	setComments: (comments: Comment[]) => void;
 	isReplying?: boolean;
 	setIsReplying?: Dispatch<React.SetStateAction<boolean>> | undefined;
 }
+
 export const CommentsContext = createContext<CommentsContextProps>({} as CommentsContextProps);
 
 export const CommentsProvider = ({ children }: PropsWithChildren) => {
-	const [comments, setComments] = useState(jsonData.comments);
 	const [isReplying, setIsReplying] = useState(false);
+	const { comments, setComments } = useCommentsStore();
 
 	return (
 		<CommentsContext.Provider

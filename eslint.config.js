@@ -20,12 +20,6 @@ export default [
 			react: reactPlugin,
 			'react-hooks': reactHooksPlugin,
 		},
-		extends: [
-			'plugin:@typescript-eslint/recommended',
-			'plugin:react/recommended',
-			'plugin:react-hooks/recommended',
-			'airbnb',
-		],
 		rules: {
 			...airbnbConfig.rules,
 			...airbnbHooksConfig.rules,
@@ -34,7 +28,6 @@ export default [
 			...reactPlugin.configs.recommended.rules,
 			...reactHooksPlugin.configs.recommended.rules,
 			'react/react-in-jsx-scope': 'off',
-			'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 		},
 	},
 ];

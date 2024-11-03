@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { CommentsContext, CommentsProvider } from './context/CommentsContext';
+import { CommentsProvider } from './context/CommentsContext';
 import CommentsSection from './components/CommentsSection';
 import Reply from './components/Reply';
 import styled from 'styled-components';
+import { useCommentsStore } from '@/challenges/interactive-comments/store/commentsStore.ts';
 
 export const Comments = styled.ul`
 	display: flex;
@@ -24,7 +24,7 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	font-family: var(--comments-font-family);
+	font-family: var(--comments-font-family), sans-serif;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	flex-direction: column;
@@ -36,8 +36,7 @@ const Container = styled.div`
 `;
 
 function InteractiveComments() {
-	const { comments } = useContext(CommentsContext);
-
+	const { comments } = useCommentsStore();
 	return (
 		<CommentsProvider>
 			<Container>
