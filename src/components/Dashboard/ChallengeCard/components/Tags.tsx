@@ -13,7 +13,7 @@ export default function ChallengeCardTags({ tags }: ChallengeCardTagsProps) {
 					{tags?.map((tag, index) => (
 						<span
 							key={index}
-							className="py-1 px-2 rounded-lg font-semibold text-sm bg-[var(--app-yellow)] text-[var(--app-dark-blue)]"
+							className="py-1 px-2 rounded-lg font-semibold text-sm bg-orange-200 text-slate-900 hover:bg-orange-300 transition"
 						>
 							{tag}
 						</span>

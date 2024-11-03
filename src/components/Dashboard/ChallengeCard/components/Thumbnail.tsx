@@ -19,18 +19,18 @@ export default function ChallengeCardThumbnail({ src, title, description }: Thum
 	}, [src]);
 
 	return (
-		<>
+		<div className="w-full p-2">
 			<AspectRatio ratio={imgRatio}>
 				<img
 					src={src}
 					alt={title}
 					aria-description={description}
 					aria-label={title}
-					className="rounded-t-xl w-80 object-cover"
+					className="w-72 object-cover rounded-lg motion-reduce:hidden"
 					loading="lazy"
 					draggable="false"
 				/>
 			</AspectRatio>
-		</>
+		</div>
 	);
 }

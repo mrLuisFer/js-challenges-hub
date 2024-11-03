@@ -16,7 +16,7 @@ export default function ChallengeCard({
 		<Link to={challenge.route ?? ''} key={index}>
 			<article
 				key={index}
-				className="bg-slate-800 max-w-80 rounded-xl transition border-2 border-transparent hover:border-orange-300"
+				className="bg-slate-800 hover:bg-slate-900 max-w-80 rounded-xl transition border-2 border-transparent hover:border-orange-300 group hover:shadow"
 			>
 				{challenge?.image ? (
 					<ChallengeCardThumbnail
