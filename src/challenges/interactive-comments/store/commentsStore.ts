@@ -5,6 +5,7 @@ import jsonData from '@/challenges/interactive-comments/data.ts';
 type CommentsStore = {
 	comments: Comment[];
 	setComments: (comments: Comment[]) => void;
+	addNewComment: (comment: Comment) => void;
 };
 
 export const useCommentsStore = create<CommentsStore>()((set) => ({
@@ -12,4 +13,7 @@ export const useCommentsStore = create<CommentsStore>()((set) => ({
 	setComments: (comments: Comment[]) => {
 		set(() => ({ comments: comments }));
 	},
+	addNewComment: (newComment: Comment) => {
+		set((prev) => ({ comments: [...prev.comments, newComment] }));
+	}
 }));

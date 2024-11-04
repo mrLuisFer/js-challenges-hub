@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CommentsContext } from '../context/CommentsContext';
 import { useGetUser } from './useGetUser';
 import { AsComment, Comment } from '../types/index.types';
+import { useCommentsStore } from '@/challenges/interactive-comments/store/commentsStore.ts';
 
 type UseCommentActions = {
 	comment?: Comment;
@@ -11,6 +12,7 @@ export const useCommentActions = ({ comment, as = 'comment' }: UseCommentActions
 	const { comments, setComments } = useContext(CommentsContext);
 	const { user } = useGetUser();
 	const isAuthor = comment?.user.username === user.username;
+	const {addNewComment} = useCommentsStore()
 
 	const handleDeleteComment = () => {
 		if (!comment) throw new Error('No comment to delete');
@@ -45,7 +47,7 @@ export const useCommentActions = ({ comment, as = 'comment' }: UseCommentActions
 			replies: [],
 			createdAt,
 		};
-		setComments?.((prev) => [newComment, ...prev]);
+		addNewComment(newComment);
 	}
 
 	function handleAddReply(value: string) {
