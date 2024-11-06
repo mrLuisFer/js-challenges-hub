@@ -1,26 +1,17 @@
-import { Link } from 'react-router-dom';
 import { footerLinks } from '@/components/Dashboard/Footer/constants/footerLinks.ts';
+import FooterLink from '@/components/Dashboard/Footer/components/Link.tsx';
+import { useMemo } from 'react';
 
 export default function FooterLinks() {
+	const hasLinks = useMemo(() => footerLinks.length > 0, []);
+
 	return (
 		<div className="flex items-center gap-6">
-			{footerLinks.map((link) => {
-				const urlRegex = new RegExp(
-					'https?://(www.)?[-a-zA-Z0-9@:%._+~#=]{1,256}.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()!@:%_+.~#?&/=]*)'
-				);
-				const isExternalLink = urlRegex.test(link.url);
-				return (
-					<Link
-						key={link.label}
-						to={link.url}
-						className="text-sm transition opacity-80 hover:opacity-100"
-						target={isExternalLink ? '_blank' : '_self'}
-						rel={isExternalLink ? 'referrer opener' : undefined}
-					>
-						{link.label}
-					</Link>
-				);
-			})}
+			{hasLinks
+				? footerLinks?.map((link) => (
+						<FooterLink url={link.url} label={link.label} key={`${link.url}-${link.label}`} />
+					))
+				: null}
 		</div>
 	);
 }

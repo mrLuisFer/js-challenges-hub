@@ -2,20 +2,21 @@ import AgeInputs from './lib/AgeInputs';
 import Separator from './lib/Separator';
 import AgePreview from './lib/AgePreview/AgePreview';
 import { CardStyled, TextCardStyled } from './index.styles';
-import { useState } from 'react';
-import { TDate, NewDate } from './types';
+import { useCallback, useEffect, useState } from 'react';
+import { TDate, TDatePlurals } from './types';
 import './styles.css';
+import { isObjectEmpty } from '@/utils/isObjectEmpty.ts';
 
 export default function AgeCalculator() {
 	const [date, setDate] = useState<TDate>({
-		day: undefined,
-		month: undefined,
-		year: undefined,
+		day: 20,
+		month: 9,
+		year: 2003,
 	});
 	const [showAge, setShowAge] = useState<boolean>(false);
-	const [newDate, setNewDate] = useState<NewDate>({} as NewDate);
+	const [newDate, setNewDate] = useState<TDatePlurals>({} as TDatePlurals);
 
-	const getCurrentDate = () => {
+	const getCurrentDate = useCallback(() => {
 		const now = new Date();
 		const currentYear = now.getFullYear();
 		const currentMonth = now.getMonth() + 1;
@@ -37,14 +38,25 @@ export default function AgeCalculator() {
 			days += 30;
 		}
 
-		setNewDate({ years, months, days });
-	};
+		return { years, months, days };
+	}, [date?.day, date?.month, date?.year]);
+
+	useEffect(() => {
+		if (isObjectEmpty(date)?.isEmpty) return;
+		const newDate = getCurrentDate();
+		setNewDate(newDate);
+	}, [date, getCurrentDate]);
 
 	return (
 		<div className="bg-gray-200 min-h-screen py-8 flex justify-center items-start">
 			<CardStyled>
 				<AgeInputs setShowAge={setShowAge} date={date} setDate={setDate} />
-				<Separator showAge={showAge} onClick={getCurrentDate} />
+				<Separator
+					showAge={showAge}
+					onClick={() => {
+						setNewDate(getCurrentDate());
+					}}
+				/>
 				<AgePreview newDate={newDate} />
 				<TextCardStyled showed={showAge}>change the value of inputs to get your age</TextCardStyled>
 			</CardStyled>

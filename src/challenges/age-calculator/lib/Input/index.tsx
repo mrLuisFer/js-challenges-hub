@@ -1,29 +1,48 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction, useMemo, useState } from 'react';
 import { InputContainer, InputErrorStyled, InputLabelStyled, InputStyled } from './Input.styles';
+import { labels, maxValues, minValues } from '@/challenges/age-calculator/contants';
 
 type InputProps = {
 	label: string;
 	error?: string;
 	setValue: (value: number) => void;
 	setShowAge?: Dispatch<SetStateAction<boolean>>;
+	defaultValue?: number;
+	value: number | undefined;
 };
-export default function Input({ setValue, label, error, setShowAge }: InputProps) {
+
+export default function Input({
+	setValue,
+	label,
+	error,
+	setShowAge,
+	defaultValue,
+	value,
+}: InputProps) {
 	const [showError, setShowError] = useState(false);
 
-	const isDay = label === 'day';
-	const isMonth = label === 'month';
-	const isYear = label === 'year';
-	const currentYear = new Date().getFullYear();
+	const isDay = useMemo(() => label === labels.day, [label]);
+	const isMonth = useMemo(() => label === labels.month, [label]);
+	const isYear = useMemo(() => label === labels.year, [label]);
 
-	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+	const handleChange = (event: ChangeEvent<HTMLInputElement>, fieldType: string) => {
 		const inputValue = +event.target.value;
 		setShowError(false);
 		setShowAge?.(false);
-		setValue(inputValue);
 
-		const isDayError = isDay && (inputValue < 1 || inputValue > 31);
-		const isMonthError = isMonth && (inputValue < 1 || inputValue > 12);
-		const isYearError = isYear && (inputValue < 1900 || inputValue > 2021);
+		const validators = {
+			[labels.day]: () => inputValue <= maxValues.day,
+			[labels.month]: () => inputValue <= maxValues.month,
+			[labels.year]: () => inputValue <= maxValues.year,
+		};
+
+		if (validators[fieldType]?.()) {
+			setValue(inputValue);
+		}
+
+		const isDayError = isDay && (inputValue < 1 || inputValue > maxValues.day);
+		const isMonthError = isMonth && (inputValue < 1 || inputValue > maxValues.month);
+		const isYearError = isYear && (inputValue < 1900 || inputValue > maxValues.year);
 
 		if (isDayError || isMonthError || isYearError) {
 			setShowError(true);
@@ -38,11 +57,13 @@ export default function Input({ setValue, label, error, setShowAge }: InputProps
 			<InputStyled
 				id={`${label}-input`}
 				type="number"
-				onChange={handleChange}
+				onChange={(event) => handleChange(event, label)}
 				hasError={showError}
-				max={isDay ? 31 : isMonth ? 12 : currentYear}
-				min={isDay ? 0 : isMonth ? 0 : 1900}
+				max={maxValues[label]} // day, month, year
+				min={minValues[label]}
 				pattern="\d*"
+				defaultValue={defaultValue}
+				value={value || undefined}
 			/>
 			{showError ? <InputErrorStyled>{error}</InputErrorStyled> : null}
 		</InputContainer>

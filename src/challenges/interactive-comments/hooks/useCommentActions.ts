@@ -12,7 +12,7 @@ export const useCommentActions = ({ comment, as = 'comment' }: UseCommentActions
 	const { comments, setComments } = useContext(CommentsContext);
 	const { user } = useGetUser();
 	const isAuthor = comment?.user.username === user.username;
-	const {addNewComment} = useCommentsStore()
+	const { addNewComment } = useCommentsStore();
 
 	const handleDeleteComment = () => {
 		if (!comment) throw new Error('No comment to delete');

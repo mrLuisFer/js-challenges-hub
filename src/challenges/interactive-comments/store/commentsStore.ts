@@ -15,5 +15,5 @@ export const useCommentsStore = create<CommentsStore>()((set) => ({
 	},
 	addNewComment: (newComment: Comment) => {
 		set((prev) => ({ comments: [...prev.comments, newComment] }));
-	}
+	},
 }));

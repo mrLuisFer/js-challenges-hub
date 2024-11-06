@@ -3,8 +3,13 @@ export type TDate = {
 	month?: number;
 	year?: number;
 };
-export type NewDate = {
+
+export type TDatePlurals = {
 	years: number;
 	months: number;
 	days: number;
 };
+
+export interface KeyOfDates extends Required<TDate> {
+	[key: string]: number;
+}
