@@ -1,32 +1,22 @@
 import globals from 'globals';
-import jsPlugin from '@eslint/js';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import pluginJs from '@eslint/js';
+import tslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
 import airbnbConfig from 'eslint-config-airbnb';
 import airbnbHooksConfig from 'eslint-config-airbnb/hooks';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 export default [
+	{ files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+	{ languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+	pluginJs.configs.recommended,
+	...tslint.configs.recommended,
+	pluginReact.configs.flat.recommended,
 	{
-		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-		languageOptions: {
-			globals: { ...globals.browser, ...globals.node },
-			parser: tsParser,
-		},
-		plugins: {
-			'@typescript-eslint': tsPlugin,
-			react: reactPlugin,
-			'react-hooks': reactHooksPlugin,
-		},
 		rules: {
 			...airbnbConfig.rules,
 			...airbnbHooksConfig.rules,
-			...jsPlugin.configs.recommended.rules,
-			...tsPlugin.configs.recommended.rules,
-			...reactPlugin.configs.recommended.rules,
-			...reactHooksPlugin.configs.recommended.rules,
+			...pluginJs.configs.recommended.rules,
 			'react/react-in-jsx-scope': 'off',
 		},
 	},
