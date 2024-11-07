@@ -22,8 +22,11 @@ export const CommentHeaderProfileImageStyled = styled.img`
 
 export const CommentHeaderProfileNameStyled = styled.h1`
 	font-size: 14px;
-	font-weight: 500;
 	color: var(--comments-dark-blue);
+
+	&:not(span) {
+		font-weight: 500;
+	}
 
 	span {
 		background: var(--comments-moderate-blue);

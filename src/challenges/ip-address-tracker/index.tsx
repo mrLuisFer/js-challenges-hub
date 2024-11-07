@@ -2,16 +2,17 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Map from './components/Map';
 import IpInfo from './components/IpInfo';
+import { logger } from '@/utils/Logger.ts';
 
 export default function IpAddressTracker() {
 	useEffect(() => {
 		if (navigator.geolocation) {
 			navigator.permissions
 				.query({ name: 'geolocation' })
-				.then((result) => console.info(result))
-				.catch((e) => console.error(e));
+				.then((result) => logger.info(result))
+				.catch((e) => logger.error(e));
 		} else {
-			console.error('Geolocation is not supported');
+			logger.error('Geolocation is not supported');
 		}
 	}, []);
 

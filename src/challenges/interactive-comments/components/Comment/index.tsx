@@ -1,21 +1,21 @@
 import Likes from './Likes';
 import Content from './Content';
 import Reply from '../Reply';
-import { useContext } from 'react';
 import { CommentStyled, ReplyContainer } from './Comment.styles';
-import { MobileHidden } from '../Reply/Reply.styles';
 import { AsComment, Comment as CommentType } from '../../types/index.types';
-import { CommentsContext } from '../../context/CommentsContext';
+import { useState } from 'react';
+import { ReplyContext } from '../../context/ReplyContext';
 
 export default function Comment({ as, comment }: { as: AsComment; comment: CommentType }) {
-	const { isReplying } = useContext(CommentsContext);
+	const [isReplying, setIsReplying] = useState(false);
 
 	return (
-		<>
+		<ReplyContext.Provider value={{
+			isReplying,
+			setIsReplying,
+		}}>
 			<CommentStyled asProp={as}>
-				<MobileHidden>
-					<Likes comment={comment} as={as} />
-				</MobileHidden>
+				<Likes comment={comment} as={as} />
 				<Content as={as} comment={comment} />
 			</CommentStyled>
 
@@ -24,6 +24,6 @@ export default function Comment({ as, comment }: { as: AsComment; comment: Comme
 					<Reply as="replies" comment={comment} />
 				</ReplyContainer>
 			)}
-		</>
+		</ReplyContext.Provider>
 	);
 }

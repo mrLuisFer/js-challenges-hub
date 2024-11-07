@@ -4,7 +4,9 @@ import jsonData from '@/challenges/interactive-comments/data.ts';
 
 type CommentsStore = {
 	comments: Comment[];
+	// eslint-disable-next-line no-unused-vars
 	setComments: (comments: Comment[]) => void;
+	// eslint-disable-next-line no-unused-vars
 	addNewComment: (comment: Comment) => void;
 };
 

@@ -1,4 +1,4 @@
-type LogValue = string | number | object | ((...args: unknown[]) => unknown);
+type LogValue = string | number | object | unknown;
 
 class Logger {
 	private formatKey(value: LogValue): string {
@@ -27,10 +27,3 @@ class Logger {
 }
 
 export const logger = new Logger();
-
-// // Usando la clase Logger con diferentes tipos de valores
-// logger.log('event'); // "event: event"
-// logger.error({ message: 'This is an error' }); // "Object: { message: 'This is an error' }"
-// logger.info(function testFunction() {
-// }); // "testFunction: function testFunction() {}"
-// logger.log(123); // "123: 123"

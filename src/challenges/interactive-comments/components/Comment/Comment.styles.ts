@@ -18,7 +18,7 @@ export const CommentStyled = styled.li<{
 	width: 100%;
 
 	&:hover {
-		box-shadow: 0.2px 0.2px 2px 0.5px var(--comments-light-gray);
+		box-shadow: 1px 1px 2px 1px var(--comments-light-gray);
 		border-color: #ccc;
 	}
 
@@ -26,6 +26,7 @@ export const CommentStyled = styled.li<{
 		padding: 20px;
 		max-width: ${(props) => (props.asProp === 'comment' ? '600px' : '520px')};
 		min-width: ${(props) => (props.asProp === 'comment' ? '600px' : '520px')};
+		height: ${(props) => (props.asProp === 'comment' ? '145px' : '160px')};
 	}
 `;
 

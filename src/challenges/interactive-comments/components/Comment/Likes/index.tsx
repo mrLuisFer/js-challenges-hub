@@ -10,6 +10,7 @@ export default function Likes({ comment, as }: { comment: Comment; as: AsComment
 	const [isPlusVoted, setIsPlusVoted] = useState(false);
 	const [isMinusVoted, setIsMinusVoted] = useState(false);
 	const { isAuthor } = useCommentActions({ comment, as });
+	const imgSize = 13;
 
 	function handlePlusVote() {
 		if (isAuthor) return;
@@ -37,12 +38,12 @@ export default function Likes({ comment, as }: { comment: Comment; as: AsComment
 
 	return (
 		<LikesStyled>
-			<LikesButtonStyled onClick={handlePlusVote}>
-				<img src={iconPlus} alt="icon-plus" />
+			<LikesButtonStyled onClick={handlePlusVote} isPressed={isPlusVoted}>
+				<img src={iconPlus} alt="icon-plus" width={imgSize} height={imgSize} />
 			</LikesButtonStyled>
-			<LikesCounterStyled>{likes}</LikesCounterStyled>
-			<LikesButtonStyled onClick={handleMinusVote}>
-				<img src={iconMinus} alt="icon-minus" />
+			<LikesCounterStyled isVoted={isPlusVoted || isMinusVoted}>{likes}</LikesCounterStyled>
+			<LikesButtonStyled onClick={handleMinusVote} isPressed={isMinusVoted}>
+				<img src={iconMinus} alt="icon-minus" width={imgSize} height={imgSize} />
 			</LikesButtonStyled>
 		</LikesStyled>
 	);

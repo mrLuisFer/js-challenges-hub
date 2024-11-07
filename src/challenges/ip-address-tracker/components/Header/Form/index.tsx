@@ -5,6 +5,7 @@ import { useMapStore } from '../../../lib/store/useMapStore';
 import { LatLngExpression } from 'leaflet';
 import { getIpAddress } from '../../../lib/api/getIpAddress';
 import Input from './Input';
+import { logger } from '@/utils/Logger.ts';
 
 export default function Form() {
 	const [inputValue, setInputValue] = useState<string | undefined>('');
@@ -27,7 +28,7 @@ export default function Form() {
 				map?.setView(mapData, 13);
 			}
 		} catch (error) {
-			console.error(error);
+			logger.error(error);
 		}
 	};
 

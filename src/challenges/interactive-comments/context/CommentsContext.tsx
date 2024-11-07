@@ -1,18 +1,16 @@
-import React, { Dispatch, PropsWithChildren, createContext, useState } from 'react';
+import { PropsWithChildren, createContext } from 'react';
 import { Comment } from '../types/index.types';
 import { useCommentsStore } from '@/challenges/interactive-comments/store/commentsStore.ts';
 
 interface CommentsContextProps {
 	comments: Comment[] | undefined;
+	// eslint-disable-next-line no-unused-vars
 	setComments: (comments: Comment[]) => void;
-	isReplying?: boolean;
-	setIsReplying?: Dispatch<React.SetStateAction<boolean>> | undefined;
 }
 
 export const CommentsContext = createContext<CommentsContextProps>({} as CommentsContextProps);
 
 export const CommentsProvider = ({ children }: PropsWithChildren) => {
-	const [isReplying, setIsReplying] = useState(false);
 	const { comments, setComments } = useCommentsStore();
 
 	return (
@@ -20,8 +18,6 @@ export const CommentsProvider = ({ children }: PropsWithChildren) => {
 			value={{
 				comments,
 				setComments,
-				isReplying,
-				setIsReplying,
 			}}
 		>
 			{children}

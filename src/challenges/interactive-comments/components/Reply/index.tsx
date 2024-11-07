@@ -11,7 +11,7 @@ import {
 	ReplyTextareaStyled,
 } from './Reply.styles';
 import { AsComment, Comment } from '../../types/index.types';
-import { CommentsContext } from '../../context/CommentsContext';
+import { ReplyContext } from '@/challenges/interactive-comments/context/ReplyContext.ts';
 
 export default function Reply({ as = 'comment', comment }: { as?: AsComment; comment?: Comment }) {
 	const [value, setValue] = useState('');
@@ -21,7 +21,7 @@ export default function Reply({ as = 'comment', comment }: { as?: AsComment; com
 		as,
 		comment,
 	});
-	const { setIsReplying } = useContext(CommentsContext);
+	const { setIsReplying } = useContext(ReplyContext);
 
 	function handleSendReply() {
 		if (!value) return;
@@ -49,7 +49,7 @@ export default function Reply({ as = 'comment', comment }: { as?: AsComment; com
 				value={value}
 			/>
 			<MobileHidden>
-				<ReplyButtonStyled onClick={handleSendReply} className="reply__button">
+				<ReplyButtonStyled onClick={handleSendReply}>
 					{isReply ? 'reply' : 'send'}
 				</ReplyButtonStyled>
 			</MobileHidden>

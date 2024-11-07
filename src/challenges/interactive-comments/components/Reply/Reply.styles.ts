@@ -18,7 +18,7 @@ export const ReplyStyled = styled.div<{
 	margin-left: ${(props) => (props.isReply ? 'auto' : '0px')};
 
 	&:hover {
-		box-shadow: 0.2px 0.2px 2px 0.5px var(--comments-light-gray);
+		box-shadow: 1px 1px 2px 1px var(--comments-light-gray);
 	}
 
 	@media (${queries.tablet}) {
@@ -27,7 +27,7 @@ export const ReplyStyled = styled.div<{
 		margin-top: ${(props) => (props.isReply ? '' : '15px')};
 		flex-direction: row;
 		width: 100%;
-		padding: 20px;
+		padding: ${(props) => props.isReply ? '20px' : '20px 0 0'}
 	}
 `;
 
@@ -45,7 +45,7 @@ export const ReplyTextareaStyled = styled.textarea`
 	resize: none;
 	border-color: var(--comments-light-gray);
 	border-radius: 10px;
-	font-family: var(--comments-font-family);
+	font-family: var(--comments-font-family), sans-serif;
 	width: 100%;
 
 	@media (${queries.tablet}) {
@@ -54,10 +54,10 @@ export const ReplyTextareaStyled = styled.textarea`
 `;
 
 export const ReplyButtonStyled = styled.button`
-	background-color: var(--comments-moderate-blue);
-	color: var(--comments-white);
+	background-color: #5457B6FF;
+	color: #fff;
 	border: none;
-	padding: 15px 25px;
+	padding: 10px 20px;
 	border-radius: 5px;
 	cursor: pointer;
 	font-weight: 700;

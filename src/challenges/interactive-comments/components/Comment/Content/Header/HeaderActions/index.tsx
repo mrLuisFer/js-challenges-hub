@@ -10,7 +10,7 @@ import {
 import { useEditingComment } from '../../../../../hooks/useEditingComment';
 import { AsComment, Comment } from '../../../../../types/index.types';
 import { useContext } from 'react';
-import { CommentsContext } from '../../../../../context/CommentsContext';
+import { ReplyContext } from '@/challenges/interactive-comments/context/ReplyContext.ts';
 
 export default function HeaderActions({
 	as,
@@ -20,6 +20,7 @@ export default function HeaderActions({
 }: {
 	as: AsComment;
 	comment: Comment;
+	// eslint-disable-next-line no-unused-vars
 	setIsEditing: (value: boolean) => void;
 	isEditing: boolean;
 }) {
@@ -31,7 +32,7 @@ export default function HeaderActions({
 		setIsEditing,
 		isEditing,
 	});
-	const { setIsReplying } = useContext(CommentsContext);
+	const { setIsReplying } = useContext(ReplyContext);
 
 	return (
 		<>
