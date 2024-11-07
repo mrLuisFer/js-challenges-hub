@@ -4,7 +4,7 @@ export enum AllRoutes {
 	qrCard = '/qr-card',
 	root = '/',
 	all = '*',
-	terms = '/terms-license',
 	ipAddress = '/ip-tracker',
 	restCountries = '/rest-countries',
+	challenges = '/challenges',
 }

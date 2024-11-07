@@ -1,13 +1,18 @@
 import { useLocation } from 'react-router-dom';
 import BackToDashboardBtn from '../components/BackToDashboardBtn.tsx';
+import HeaderHistory from '@/components/Global/Header/components/History.tsx';
+import { useMemo } from 'react';
 
 export default function Header() {
 	const location = useLocation();
-	const title = location.pathname.replace('/', '').split('-').join(' ');
+	const title = useMemo(() => location.pathname.replace('/', '').split('-').join(' '), []);
 
 	return (
 		<header className="flex py-2 px-2 sm:px-8 justify-between items-center">
-			<BackToDashboardBtn />
+			<section className="flex gap-4 items-center">
+				<BackToDashboardBtn />
+				<HeaderHistory currentLocation={title} />
+			</section>
 			<div>
 				<div className="flex items-start md:gap-1 flex-col">
 					<span className="font-semibold opacity-70 text-xs">Challenge:</span>
