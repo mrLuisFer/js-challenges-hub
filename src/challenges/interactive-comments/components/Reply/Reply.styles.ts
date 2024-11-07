@@ -4,7 +4,7 @@ import { queries } from '../../utils/mediaQueries';
 export const ReplyStyled = styled.div<{
 	isReply: boolean;
 }>`
-	background-color: var(--comments-white);
+	background-color: #fff;
 	max-width: 600px;
 	border-radius: 10px;
 	display: flex;
@@ -27,7 +27,7 @@ export const ReplyStyled = styled.div<{
 		margin-top: ${(props) => (props.isReply ? '' : '15px')};
 		flex-direction: row;
 		width: 100%;
-		padding: ${(props) => props.isReply ? '20px' : '20px 0 0'}
+		padding: 20px;
 	}
 `;
 
@@ -43,10 +43,16 @@ export const ReplyTextareaStyled = styled.textarea`
 	flex: 1;
 	padding: 5px;
 	resize: none;
-	border-color: var(--comments-light-gray);
+	border: 1px solid #C7C7C7FF;
+	outline-color: #C7C7C7FF;
 	border-radius: 10px;
 	font-family: var(--comments-font-family), sans-serif;
 	width: 100%;
+	transition: 0.2s ease;
+
+	&:hover {
+		border-color: #b8b8b8;
+	}
 
 	@media (${queries.tablet}) {
 		padding: 10px 20px;

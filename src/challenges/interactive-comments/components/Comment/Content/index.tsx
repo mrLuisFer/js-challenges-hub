@@ -29,6 +29,7 @@ export default function Content({ comment, as }: { comment: Comment; as: AsComme
 				isEditing={isEditing}
 				comment={comment}
 				handleUpdatedContent={handleUpdatedContent}
+				setIsEditing={setIsEditing}
 			/>
 			<DesktopHidden>
 				<CommentContentFooterStyled>

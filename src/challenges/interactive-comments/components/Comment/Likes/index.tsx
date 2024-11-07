@@ -41,7 +41,7 @@ export default function Likes({ comment, as }: { comment: Comment; as: AsComment
 			<LikesButtonStyled onClick={handlePlusVote} isPressed={isPlusVoted}>
 				<img src={iconPlus} alt="icon-plus" width={imgSize} height={imgSize} />
 			</LikesButtonStyled>
-			<LikesCounterStyled isVoted={isPlusVoted || isMinusVoted}>{likes}</LikesCounterStyled>
+			<LikesCounterStyled className='rounded-md p-1' isVoted={isPlusVoted || isMinusVoted}>{likes}</LikesCounterStyled>
 			<LikesButtonStyled onClick={handleMinusVote} isPressed={isMinusVoted}>
 				<img src={iconMinus} alt="icon-minus" width={imgSize} height={imgSize} />
 			</LikesButtonStyled>

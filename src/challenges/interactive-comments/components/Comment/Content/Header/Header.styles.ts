@@ -29,11 +29,11 @@ export const CommentHeaderProfileNameStyled = styled.h1`
 	}
 
 	span {
-		background: var(--comments-moderate-blue);
-		color: var(--comments-very-light-gray);
+		background: hsl(238, 40%, 52%);
+		color: #fff;
 		font-size: 12px;
 		padding: 3px 5px;
-		border-radius: 3px;
+		border-radius: 5px;
 		margin: 5px;
 		transition: 0.2s ease;
 

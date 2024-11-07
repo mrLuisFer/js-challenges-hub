@@ -52,11 +52,12 @@ export const LikesButtonStyled = styled.button<{
 export const LikesCounterStyled = styled.span<{
 	isVoted: boolean
 }>`
-	color: var(--comments-moderate-blue);
+	color: hsl(238, 40%, 52%);
 	font-weight: 500;
 	font-size: 14px;
 	opacity: ${(props) => props.isVoted ? '1' : '0.6'};
 	transition: 0.2s ease;
+	background-color: ${(props) => props.isVoted ? "#ebeff4" : ""};
 
 	@media (${queries.tablet}) {
 		font-size: 16px;

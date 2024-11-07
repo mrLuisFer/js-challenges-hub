@@ -12,8 +12,8 @@ export const CommentContentTextStyled = styled.div`
 
 export const ContentTextStyled = styled.p`
 	span {
-		color: var(--comments-moderate-blue);
-		font-weight: 500;
+		color: hsl(238, 40%, 52%);
+		font-weight: 600;
 		transition: $transition;
 
 		&:hover {

@@ -26,7 +26,7 @@ export const CommentStyled = styled.li<{
 		padding: 20px;
 		max-width: ${(props) => (props.asProp === 'comment' ? '600px' : '520px')};
 		min-width: ${(props) => (props.asProp === 'comment' ? '600px' : '520px')};
-		height: ${(props) => (props.asProp === 'comment' ? '145px' : '160px')};
+		height: 'fit-content';
 	}
 `;
 

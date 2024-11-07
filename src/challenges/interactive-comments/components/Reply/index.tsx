@@ -26,7 +26,7 @@ export default function Reply({ as = 'comment', comment }: { as?: AsComment; com
 	function handleSendReply() {
 		if (!value) return;
 		if (isReply) {
-			handleAddReply(value);
+			handleAddReply(value, comment!);
 			if (setIsReplying) setIsReplying(false);
 		} else if (as === 'comment') handleAddComment(value);
 		setValue('');

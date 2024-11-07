@@ -21,7 +21,7 @@ export const CommentHeaderActionsButtonStyled = styled.button`
 
 	&:hover {
 		border-color: #dfe5ec;
-		background-color: #dfe5ec;
+		background-color: #ebeff4;
 	}
 
 	&:first-child {

@@ -50,7 +50,7 @@ export const useCommentActions = ({ comment, as = 'comment' }: UseCommentActions
 		addNewComment(newComment);
 	}
 
-	function handleAddReply(value: string) {
+	function handleAddReply(value: string, comment: Comment) {
 		if (!value) return;
 		if (!comment) throw new Error('No comment to reply to');
 
@@ -62,6 +62,7 @@ export const useCommentActions = ({ comment, as = 'comment' }: UseCommentActions
 			score: 0,
 			replies: [],
 			createdAt,
+			replyingTo: comment?.replyingTo || comment?.user?.username,
 		};
 		const updatedComments = comments?.map((c) => {
 			if (c.id === comment.id) {

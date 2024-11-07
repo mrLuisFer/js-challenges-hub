@@ -4,6 +4,7 @@ import { AsComment, Comment } from '../types/index.types';
 
 interface UseEditingComment {
 	isAuthor: boolean;
+	// eslint-disable-next-line no-unused-vars
 	setIsEditing: (state: boolean) => void;
 	isEditing: boolean;
 	comment: Comment;
