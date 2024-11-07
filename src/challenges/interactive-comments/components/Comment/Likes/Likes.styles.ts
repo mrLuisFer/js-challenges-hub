@@ -33,7 +33,7 @@ export const LikesStyled = styled.div`
 `;
 
 export const LikesButtonStyled = styled.button<{
-	isPressed: boolean
+	isPressed: boolean;
 }>`
 	background-color: transparent;
 	border: none;
@@ -41,7 +41,7 @@ export const LikesButtonStyled = styled.button<{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	filter: ${(props) => props.isPressed ? 'brightness(0.7)' : ''}
+	filter: ${(props) => (props.isPressed ? 'brightness(0.7)' : '')}
 }
 
 &:hover {
@@ -50,14 +50,14 @@ export const LikesButtonStyled = styled.button<{
 `;
 
 export const LikesCounterStyled = styled.span<{
-	isVoted: boolean
+	isVoted: boolean;
 }>`
 	color: hsl(238, 40%, 52%);
 	font-weight: 500;
 	font-size: 14px;
-	opacity: ${(props) => props.isVoted ? '1' : '0.6'};
+	opacity: ${(props) => (props.isVoted ? '1' : '0.6')};
 	transition: 0.2s ease;
-	background-color: ${(props) => props.isVoted ? "#ebeff4" : ""};
+	background-color: ${(props) => (props.isVoted ? '#ebeff4' : '')};
 
 	@media (${queries.tablet}) {
 		font-size: 16px;

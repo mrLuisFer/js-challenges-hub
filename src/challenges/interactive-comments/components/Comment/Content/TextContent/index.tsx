@@ -19,11 +19,11 @@ interface TextContentProps {
 }
 
 export default function TextContent({
-																			comment,
-																			handleUpdatedContent,
-																			isEditing,
-																			setIsEditing,
-																		}: TextContentProps) {
+	comment,
+	handleUpdatedContent,
+	isEditing,
+	setIsEditing,
+}: TextContentProps) {
 	const formRef = useRef<HTMLFormElement>(null);
 	const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -62,7 +62,7 @@ export default function TextContent({
 						ref={textareaRef}
 					/>
 					<button
-						className={`${hasEditedContent ? "bg-[hsl(238,_40%,_52%)] text-white filter hover:brightness-110 hover:shadow active:scale-90" : "bg-slate-200 cursor-not-allowed"} p-1 px-2 rounded-md transition`}
+						className={`${hasEditedContent ? 'bg-[hsl(238,_40%,_52%)] text-white filter hover:brightness-110 hover:shadow active:scale-90' : 'bg-slate-200 cursor-not-allowed'} p-1 px-2 rounded-md transition`}
 						style={{ marginLeft: 'auto' }}
 						onClick={() => handleUpdatedContent(editedContent)}
 						type="submit"
@@ -73,8 +73,9 @@ export default function TextContent({
 				</form>
 			) : (
 				<ContentTextStyled>
-					{comment?.replyingTo ?
-						<span className="text-blue-600">@{comment?.replyingTo} </span> : null}
+					{comment?.replyingTo ? (
+						<span className="text-blue-600">@{comment?.replyingTo} </span>
+					) : null}
 					{comment.content}
 				</ContentTextStyled>
 			)}

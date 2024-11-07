@@ -55,7 +55,6 @@ export const CommentHeaderReplyButtonStyled = styled.button`
 	background-color: transparent;
 	border: 1px solid transparent;
 
-
 	&:hover {
 		background: var(--comments-light-grayish-blue);
 		border-color: #dfe5ec;

@@ -43,8 +43,8 @@ export const ReplyTextareaStyled = styled.textarea`
 	flex: 1;
 	padding: 5px;
 	resize: none;
-	border: 1px solid #C7C7C7FF;
-	outline-color: #C7C7C7FF;
+	border: 1px solid #c7c7c7ff;
+	outline-color: #c7c7c7ff;
 	border-radius: 10px;
 	font-family: var(--comments-font-family), sans-serif;
 	width: 100%;
@@ -60,7 +60,7 @@ export const ReplyTextareaStyled = styled.textarea`
 `;
 
 export const ReplyButtonStyled = styled.button`
-	background-color: #5457B6FF;
+	background-color: #5457b6ff;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;

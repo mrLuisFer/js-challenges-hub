@@ -10,10 +10,12 @@ export default function Comment({ as, comment }: { as: AsComment; comment: Comme
 	const [isReplying, setIsReplying] = useState(false);
 
 	return (
-		<ReplyContext.Provider value={{
-			isReplying,
-			setIsReplying,
-		}}>
+		<ReplyContext.Provider
+			value={{
+				isReplying,
+				setIsReplying,
+			}}
+		>
 			<CommentStyled asProp={as}>
 				<Likes comment={comment} as={as} />
 				<Content as={as} comment={comment} />
