@@ -28,7 +28,11 @@ export default function FilterTag({ tag }: { tag: string }) {
 	return (
 		<Button
 			key={tag}
-			className={`${isSelected ? 'bg-orange-400 hover:bg-orange-400' : ''} active:bg-orange-300 transition hover:shadow`}
+			className={`transition hover:shadow select-none active:scale-95 font-semibold ${
+				isSelected
+					? 'bg-orange-400 dark:bg-orange-200 hover:bg-orange-400 hover:dark:bg-orange-300 italic'
+					: 'dark:bg-slate-500 hover:dark:bg-slate-400'
+			}`}
 			onClick={() => handleFilterByTag(tag)}
 		>
 			{tag}

@@ -1,4 +1,4 @@
-import BackToDashboardBtn from './components/BackToDashboardBtn.tsx';
+import BackToDashboardBtn from './BackToDashboardBtn.tsx';
 
 export default function ErrorNotFound() {
 	return (

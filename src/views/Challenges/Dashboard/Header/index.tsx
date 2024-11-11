@@ -1,4 +1,5 @@
-import SearchBar from './SearchBar';
+import HeaderDarkModeButton from '../../../../components/DarkModeButton';
+import SearchBar from './components/SearchBar';
 
 export default function Header() {
 	return (
@@ -12,7 +13,10 @@ export default function Header() {
 					experimental tools!!
 				</p>
 			</section>
-			<SearchBar />
+			<div className="flex flex-col gap-3">
+				<SearchBar />
+				<HeaderDarkModeButton />
+			</div>
 		</header>
 	);
 }
