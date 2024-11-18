@@ -2,11 +2,11 @@ import { Input } from '@/components/ui/input.tsx';
 import { challengesTitles } from '@/constants/challenges.ts';
 import { useSearchParams } from 'react-router-dom';
 import { useRandomLabel } from './useRandomLabel.ts';
-import { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { useChallengesStore } from '@/lib/stores/challengesStore.ts';
 import { Searchable } from '@/lib/enums/Searchable.ts';
 
-const SearchInput = forwardRef(function ({}, inputRef: React.Ref<HTMLInputElement>) {
+const SearchInput = forwardRef(function (_props, inputRef: React.Ref<HTMLInputElement>) {
 	const [label, setLabel] = useState('');
 	const { challenges, queryChallenges, setFilteredChallenges, setQueryChallenges } =
 		useChallengesStore();
@@ -26,7 +26,7 @@ const SearchInput = forwardRef(function ({}, inputRef: React.Ref<HTMLInputElemen
 			type="text"
 			name="search"
 			id="search"
-			className="bg-white outline-none transition focus-visible:border-orange-600 leading-3 h-[32px] w-60 placeholder:capitalize text-md"
+			className="bg-white dark:bg-slate-600 outline-none transition leading-3 w-60 placeholder:capitalize text-base"
 			value={queryChallenges}
 			placeholder={label}
 			title="Search any challenge from Frontend Mentor page"
@@ -44,4 +44,5 @@ const SearchInput = forwardRef(function ({}, inputRef: React.Ref<HTMLInputElemen
 	);
 });
 
+SearchInput.displayName = 'SearchInput';
 export default SearchInput;

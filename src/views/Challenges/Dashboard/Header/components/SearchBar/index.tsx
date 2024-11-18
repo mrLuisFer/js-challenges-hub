@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useChallengesStore } from '../../../../../lib/stores/challengesStore.ts';
-import { Searchable } from '../../../../../lib/enums/Searchable.ts';
+import { useChallengesStore } from '../../../../../../lib/stores/challengesStore.ts';
+import { Searchable } from '../../../../../../lib/enums/Searchable.ts';
 import { Button } from '@/components/ui/button.tsx';
 import SearchInput from './SearchInput.tsx';
+import { IoIosSearch } from 'react-icons/io';
 
 export default function SearchBar() {
 	const { setQueryChallenges, queryChallenges, challenges, setFilteredChallenges } =
@@ -55,11 +56,14 @@ export default function SearchBar() {
 			<SearchInput ref={inputRef} />
 			<Button
 				title="Search by the challenges name"
-				className="uppercase font-medium"
+				className={`text-lg transition dark:bg-white active:scale-95 ${
+					!queryChallenges ? 'cursor-not-allowed' : ''
+				}`}
 				type="submit"
 				onClick={handleFilterChallenges}
+				disabled={!queryChallenges}
 			>
-				search
+				<IoIosSearch />
 			</Button>
 		</form>
 	);

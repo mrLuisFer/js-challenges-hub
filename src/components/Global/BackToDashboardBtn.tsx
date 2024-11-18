@@ -12,7 +12,7 @@ export default function BackToDashboardBtn() {
 			<Tooltip>
 				<TooltipTrigger>
 					<Button
-						className="flex items-center transition p-3 rounded-lg transform active:scale-95 capitalize filter hover:brightness-95 text-sm active:bg-orange-400"
+						className="flex items-center transition p-3 rounded-lg transform active:scale-95 capitalize filter hover:brightness-95 text-sm active:bg-orange-400 active:dark:bg-orange-200 dark:bg-slate-200"
 						onClick={() => {
 							navigate(AllRoutes.root);
 						}}
