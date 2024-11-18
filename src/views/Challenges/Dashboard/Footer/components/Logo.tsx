@@ -1,5 +1,5 @@
 import { FiExternalLink } from 'react-icons/fi';
-import { frontendMentorUrl } from '@/views/Challenges/Dashboard/Footer/constants/footerLinks.ts';
+import { frontendMentorUrl } from '@/lib/enums/AllRoutes.ts';
 
 export default function FooterLogo() {
 	return (

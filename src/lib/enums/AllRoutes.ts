@@ -6,5 +6,7 @@ export enum AllRoutes {
 	all = '*',
 	ipAddress = '/ip-tracker',
 	restCountries = '/rest-countries',
-	challenges = '/challenges',
+	challenges = '/challenges'
 }
+
+export const frontendMentorUrl = 'https://www.frontendmentor.io';

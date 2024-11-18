@@ -3,24 +3,16 @@ import Countries from './components/Countries';
 import Header from './components/Header';
 import RegionFilter from './components/RegionFilter';
 import Searchbox from './components/Searchbox';
-import { useThemeStore } from './context/useThemeStore.ts';
-import { Theme, ThemeKeys } from './enums/Theme.ts';
 import { api } from './api.ts';
 import { useCountriesStore } from './context/useCountriesStore.ts';
 
 export default function RestCountriesApi() {
-	const { theme, setLight, setTheme } = useThemeStore();
-	const localTheme = localStorage.getItem(Theme.key);
 	const { setCountries } = useCountriesStore();
 
 	useEffect(() => {
 		setCountries(api);
 	}, [setCountries]);
 
-	useEffect(() => {
-		if (!localTheme) setLight();
-		else setTheme(localTheme as ThemeKeys);
-	}, [theme, setLight, setTheme, localTheme]);
 
 	return (
 		<section>

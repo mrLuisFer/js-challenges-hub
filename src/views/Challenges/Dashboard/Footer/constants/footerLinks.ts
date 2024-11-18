@@ -1,9 +1,10 @@
 import { FooterLink } from '@/lib/types/FooterLink.ts';
+import { frontendMentorUrl } from '@/lib/enums/AllRoutes.ts';
 
 export const footerLinks: FooterLink[] = [
 	{
 		label: 'Terms & License',
-		url: 'https://www.frontendmentor.io/license',
+		url: `${frontendMentorUrl}/license`,
 	},
 	{
 		label: 'Github Profile',
@@ -11,4 +12,3 @@ export const footerLinks: FooterLink[] = [
 	},
 ];
 
-export const frontendMentorUrl = 'https://www.frontendmentor.io';
