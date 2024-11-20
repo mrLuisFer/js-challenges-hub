@@ -2,8 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
-import { CommentsProvider } from './challenges/interactive-comments/context/CommentsContext';
-import RouteContainer from './components/Dashboard/RouteContainer';
+import RouteContainer from '@/components/Global/RouteContainer.tsx';
 import { routes, staticRoutes } from './constants/routes';
 import './css/global.css';
 import ErrorNotFound from './components/Global/ErrorNotFound';
@@ -29,9 +28,7 @@ const router = createBrowserRouter(mapRoutes(routes).concat(mapRoutes(staticRout
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<CommentsProvider>
-			<RouterProvider router={router} />
-		</CommentsProvider>
+		<RouterProvider router={router} />
 		<Analytics />
 	</StrictMode>
 );

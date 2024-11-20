@@ -1,10 +1,14 @@
-import App from '../App';
-import { AgeCalculator, InteractiveComments, QrCard, RestCountriesApi } from '../challenges';
-import IpAddressTracker from '../challenges/ip-address-tracker';
-import DetailView from '../challenges/rest-countries-api/detail';
+import DetailView from '@/views/Challenges/rest-countries-api/detail';
 import { AllRoutes } from '../lib/enums/AllRoutes';
 import { Route } from '../lib/types/Route';
 import ErrorNotFound from '../components/Global/ErrorNotFound';
+import WelcomePage from '@/views/WelcomePage';
+import Challenges from '@/views/Challenges';
+import InteractiveComments from '@/views/Challenges/interactive-comments';
+import AgeCalculator from '@/views/Challenges/age-calculator';
+import QrCard from '@/views/Challenges/qr-card';
+import IpAddressTracker from '@/views/Challenges/ip-address-tracker';
+import RestCountriesApi from '@/views/Challenges/rest-countries-api';
 
 export const routes: Route[] = [
 	{
@@ -33,7 +37,11 @@ export const routes: Route[] = [
 export const staticRoutes: Route[] = [
 	{
 		path: AllRoutes.root,
-		Element: <App />,
+		Element: <WelcomePage />,
+	},
+	{
+		path: AllRoutes.challenges,
+		Element: <Challenges />,
 	},
 	{
 		path: AllRoutes.all,
