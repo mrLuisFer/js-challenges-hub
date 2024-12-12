@@ -1,4 +1,5 @@
-import { create } from 'zustand';
+import { getItem, setItem } from "@/lib/localStorage";
+import { create } from "zustand";
 
 export type DarkModeStore = {
 	darkMode: boolean;
@@ -14,33 +15,28 @@ const addDocumentClass = (className: string) => {
 const removeDocumentClass = (className: string) => {
 	document.documentElement.classList.remove(className);
 };
-const setOnLocalStorage = (key: string, value: boolean) => {
-	localStorage.setItem(key, JSON.stringify(value));
-};
-
-export const darkModeKey = 'darkMode';
+export const darkModeKey = "darkMode";
 export const useDarkModeStore = create<DarkModeStore>((set) => ({
 	darkMode: (() => {
-		const darkMode = localStorage.getItem('darkMode');
-		console.log({ darkMode });
+		const darkMode = getItem(darkModeKey);
 		const isDarkMode = darkMode ? JSON.parse(darkMode) : false;
-		if (isDarkMode) addDocumentClass('dark');
-		else removeDocumentClass('dark');
+		if (isDarkMode) addDocumentClass("dark");
+		else removeDocumentClass("dark");
 		return isDarkMode;
 	})() as boolean,
 	setLightMode: () => {
-		removeDocumentClass('dark');
-		setOnLocalStorage(darkModeKey, false);
+		removeDocumentClass("dark");
+		setItem(darkModeKey, false);
 		set({ darkMode: false });
 	},
 	setDarkMode: () => {
-		addDocumentClass('dark');
-		setOnLocalStorage(darkModeKey, true);
+		addDocumentClass("dark");
+		setItem(darkModeKey, true);
 		set({ darkMode: true });
 	},
 	toggleDarkMode: (isChecked: boolean) => {
-		document.documentElement.classList.toggle('dark', isChecked);
-		setOnLocalStorage(darkModeKey, isChecked);
+		document.documentElement.classList.toggle("dark", isChecked);
+		setItem(darkModeKey, isChecked);
 		set(() => ({ darkMode: isChecked }));
 	},
 }));
