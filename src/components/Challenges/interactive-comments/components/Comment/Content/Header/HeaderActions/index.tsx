@@ -2,15 +2,15 @@ import iconReply from "../../../images/icon-reply.svg?url";
 import iconDelete from "../../../images/icon-delete.svg?url";
 import iconEdit from "../../../images/icon-edit.svg?url";
 import { useCommentActions } from "../../../../../hooks/useCommentActions";
+import { type AsComment, type Comment } from "../../../../../types/index.types";
+import { useContext } from "react";
+import { ReplyContext } from "@/components/challenges/interactive-comments/context/ReplyContext";
+import { useEditingComment } from "@/components/challenges/interactive-comments/hooks/useEditingComment";
 import {
 	CommentHeaderActionsButtonStyled,
 	CommentHeaderActionsStyled,
 	CommentHeaderReplyButtonStyled,
-} from "./HeaderActions.styles";
-import { useEditingComment } from "../../../../../hooks/useEditingComment";
-import { type AsComment, type Comment } from "../../../../../types/index.types";
-import { useContext } from "react";
-import { ReplyContext } from "@/components/Challenges/interactive-comments/context/ReplyContext";
+} from "@/components/challenges/interactive-comments/components/Comment/Content/Header/HeaderActions/HeaderActions.styles";
 
 export default function HeaderActions({
 	as,
