@@ -1,6 +1,5 @@
 ---
 // Welcome to Astro! Everything between these triple-dash code fences
-import "@/styles/global.css";
 import SearchBar from "@/components/search-bar/SearchBar";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import DarkModeButton from "@/components/dark-mode-button";
@@ -23,7 +22,7 @@ import Footer from "@/components/footer";
 					experimental tools!!
 				</p>
 			</section>
-			<div class="flex flex-col gap-3">
+			<div class="flex flex-col md:flex-row gap-3">
 				<SearchBar client:only />
 				<DarkModeButton client:only />
 			</div>
