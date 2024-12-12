@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,astro,svelte,html,md,vue}"],
 	theme: {
 		extend: {
 			borderRadius: {
@@ -52,6 +52,7 @@ export default {
 			},
 		},
 	},
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
 	plugins: [require("tailwindcss-animate")],
 	darkMode: "selector",
 };

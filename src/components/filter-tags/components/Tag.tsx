@@ -1,42 +1,38 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { useChallengesStore } from "@/stores/challengesStore";
-import { useMemo, useState } from "react";
+import { Checkbox } from "@components/ui/checkbox";
+import { Label } from "@components/ui/label";
+import type { CheckedState } from "@radix-ui/react-checkbox";
+import type { Dispatch, SetStateAction } from "react";
 
-export default function FilterTag({ tag }: { tag: string }) {
-	const [tagSelected, setTagSelected] = useState<string | undefined>(undefined);
-	const { setFilteredChallenges, challenges } = useChallengesStore();
+type FilterTagProps = {
+	tag: string;
+	setSelectedTags: Dispatch<SetStateAction<string[]>>;
+	selectedTags: Array<string>;
+};
+export default function FilterTag({ tag, setSelectedTags, selectedTags }: FilterTagProps) {
+	const tagId = `popover-${tag}`;
 
-	const isSelected = useMemo(() => {
-		return tagSelected === tag;
-	}, [tag, tagSelected]);
-
-	const handleFilterByTag = (tag: string) => {
-		const isSameTag = tagSelected === tag;
-		setTagSelected(isSameTag ? undefined : tag);
-
-		if (isSameTag) {
-			setFilteredChallenges(challenges);
+	const handleCheckedChange = (checked: CheckedState) => {
+		if (checked) {
+			setSelectedTags((prevSelected) => [...prevSelected, tag]);
 			return;
 		}
 
-		const filteredChallenges = challenges.filter((challenge) => {
-			return challenge.tags.includes(tag);
-		});
-		setFilteredChallenges(filteredChallenges);
+		if (!checked) {
+			const filteredArray = selectedTags.filter((selectedTag) => selectedTag !== tag);
+			setSelectedTags(filteredArray);
+		}
 	};
 
 	return (
-		<Button
-			key={tag}
-			className={`transition hover:shadow select-none active:scale-95 font-semibold ${
-				isSelected
-					? "bg-orange-400 dark:bg-orange-200 hover:bg-orange-400 hover:dark:bg-orange-300 italic"
-					: "dark:bg-slate-500 hover:dark:bg-slate-400"
-			}`}
-			onClick={() => handleFilterByTag(tag)}
-		>
-			{tag}
-		</Button>
+		<div className="flex items-center gap-2 text-base">
+			<Checkbox
+				id={tagId}
+				onCheckedChange={handleCheckedChange}
+				checked={selectedTags.includes(tag)}
+			/>
+			<Label htmlFor={tagId} className="font-normal">
+				{tag}
+			</Label>
+		</div>
 	);
 }
