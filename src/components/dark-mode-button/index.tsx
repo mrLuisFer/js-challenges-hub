@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { useDarkModeStore } from "@/stores/darkMode.store";
+import { useDarkModeStore } from "@/stores/darkModeStore";
 
 const htmlFor = "dark-mode-switch";
 export default function DarkModeButton() {
