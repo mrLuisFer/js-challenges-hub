@@ -26,7 +26,7 @@ export default function ChallengeCardThumbnail({ src, title, description }: Thum
 					alt={title}
 					aria-description={description}
 					aria-label={title}
-					className="w-72 object-cover rounded-lg motion-reduce:hidden"
+					className="w-full object-cover rounded-lg motion-reduce:hidden"
 					loading="lazy"
 					draggable="false"
 				/>
