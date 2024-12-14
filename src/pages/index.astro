@@ -7,6 +7,7 @@ import ChallengesRender from "@/components/challenges-render";
 import Footer from "@/components/footer";
 import DarkModeButtonV2 from "@/components/dark-mode-button-v2";
 import PageTitle from "@/components/PageTitle";
+import GitHubStarButton from "@/components/github-stars-button";
 ---
 
 <BaseLayout title="Interactive comments section | Frontend Mentor">
@@ -29,7 +30,10 @@ import PageTitle from "@/components/PageTitle";
 						</span>
 					</p>
 				</section>
-				<DarkModeButtonV2 client:only />
+				<section class="flex items-center gap-6">
+					<GitHubStarButton client:only />
+					<DarkModeButtonV2 client:only />
+				</section>
 			</div>
 			<div class="flex items-end justify-between pt-4 gap-12">
 				<SearchBar client:only />
