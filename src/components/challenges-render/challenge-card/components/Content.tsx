@@ -1,4 +1,3 @@
-import React from "react";
 type ChallengeCardContentProps = {
 	description: string;
 };
@@ -6,7 +5,7 @@ type ChallengeCardContentProps = {
 export default function ChallengeCardContent({ description }: ChallengeCardContentProps) {
 	return (
 		<article>
-			<p className="opacity-55 text-sm text-white group-hover:opacity-100 transition">
+			<p className="opacity-55 text-sm group-hover:opacity-100 transition text-ellipsis text-wrap">
 				{description}
 			</p>
 		</article>

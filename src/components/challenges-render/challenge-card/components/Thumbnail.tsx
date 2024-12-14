@@ -1,5 +1,5 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type ThumbnailProps = {
 	src: string;
@@ -26,7 +26,7 @@ export default function ChallengeCardThumbnail({ src, title, description }: Thum
 					alt={title}
 					aria-description={description}
 					aria-label={title}
-					className="w-full object-cover rounded-lg motion-reduce:hidden"
+					className="w-full object-cover rounded-md motion-reduce:hidden"
 					loading="lazy"
 					draggable="false"
 				/>

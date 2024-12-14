@@ -15,7 +15,7 @@ export default function ChallengeCard({
 		<a href={challenge.route ?? ""} key={index} className="animate-in">
 			<article
 				key={index}
-				className="bg-slate-800 hover:bg-slate-900 max-w-80 rounded-xl transition border-2 border-transparent hover:border-orange-300 group hover:shadow"
+				className="bg-white max-w-80 rounded-md transition border-2 border-transparent border-neutral-200 dark:border-neutral-800 hover:border-blue-300 group hover:shadow-md dark:bg-neutral-900 dark:hover:bg-neutral-950"
 			>
 				{challenge?.image ? (
 					<ChallengeCardThumbnail
@@ -24,7 +24,7 @@ export default function ChallengeCard({
 						description={challenge.description}
 					/>
 				) : null}
-				<div className="p-4 flex flex-col gap-2">
+				<div className="p-4 flex flex-col gap-4">
 					<ChallengeCardHeader title={challenge.title} level={challenge.level} />
 					<ChallengeCardContent description={challenge.description} />
 					<ChallengeCardTags tags={challenge.tags} />
