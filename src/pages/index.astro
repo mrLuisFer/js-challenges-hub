@@ -2,10 +2,10 @@
 // Welcome to Astro! Everything between these triple-dash code fences
 import SearchBar from "@/components/search-bar/SearchBar";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import DarkModeButton from "@/components/dark-mode-button";
 import Filter from "@/components/filter-tags";
 import ChallengesRender from "@/components/challenges-render";
 import Footer from "@/components/footer";
+import DarkModeButtonV2 from "@/components/dark-mode-button-v2";
 ---
 
 <BaseLayout title="Interactive comments section | Frontend Mentor">
@@ -19,9 +19,9 @@ import Footer from "@/components/footer";
 						experimental tools!!
 					</p>
 				</section>
-				<DarkModeButton client:only />
+				<DarkModeButtonV2 client:only />
 			</div>
-			<div class="flex items-end justify-start pt-4 gap-12">
+			<div class="flex items-end justify-between pt-4 gap-12">
 				<SearchBar client:only />
 				<Filter client:only />
 			</div>
