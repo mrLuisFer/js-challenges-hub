@@ -10,7 +10,7 @@ import { type FormEvent, useState } from "react";
 export default function Filter() {
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
 	const technologiesList = Object.values(tags);
-	const { filterChallengesByName, resetFilter } = useChallengesStore();
+	const { filterChallengesByTagName: filterChallengesByName, resetFilter } = useChallengesStore();
 
 	const handleSubmitFilter = (event: FormEvent) => {
 		event.preventDefault();
@@ -24,7 +24,6 @@ export default function Filter() {
 		resetFilter();
 	};
 
-	console.log({ tagsSelected: selectedTags });
 	return (
 		<section className="flex flex-row items-center gap-2 justify-center sm:justify-start">
 			<section className="flex gap-3 items-center">
@@ -71,15 +70,7 @@ export default function Filter() {
 					</Popover>
 				</div>
 			</section>
-			<Label className="flex gap-2">
-				Filter by Technologies
-				{!selectedTags.length ? "" : ":"}{" "}
-				<span className="flex items-center gap-3">
-					{selectedTags.map((tag) => (
-						<span key={tag}>{tag}.</span>
-					))}
-				</span>
-			</Label>
+			<Label className="flex gap-2">Filter by Technologies</Label>
 		</section>
 	);
 }
