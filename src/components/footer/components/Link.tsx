@@ -13,7 +13,7 @@ export default function FooterLink({ label, url }: FooterLinkProps) {
 		<a
 			key={label}
 			href={url}
-			className="text-sm transition opacity-80 hover:opacity-100"
+			className="underline-animated opacity-80 hover:opacity-100"
 			target={isExternalLink ? "_blank" : "_self"}
 			rel={isExternalLink ? "noopener noreferrer" : undefined}
 		>

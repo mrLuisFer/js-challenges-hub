@@ -10,4 +10,8 @@ export const footerLinks: FooterLink[] = [
 		label: "Github Profile",
 		url: "https://github.com/mrLuisFer",
 	},
+	{
+		label: "My Portfolio",
+		url: "https://mrluisfer.vercel.app",
+	},
 ];

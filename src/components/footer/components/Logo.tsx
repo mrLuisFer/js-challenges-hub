@@ -1,6 +1,9 @@
 import { frontendMentorUrl } from "@/enums/AllRoutes";
 import { FiExternalLink } from "react-icons/fi";
 
+/**
+ * @deprecated
+ */
 export default function FooterLogo() {
 	return (
 		<div className="flex items-center gap-4">
