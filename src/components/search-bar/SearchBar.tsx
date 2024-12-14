@@ -20,6 +20,7 @@ export default function SearchBar() {
 
 	const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value;
+		if (value.length > 45) return;
 		setQueryChallenges(value);
 		if (!value) {
 			resetFilter();
@@ -41,7 +42,7 @@ export default function SearchBar() {
 				handleSubmitFilterChallenges();
 			}}
 		>
-			<Label htmlFor="input-26">Search any challenge:</Label>
+			<Label htmlFor="input-26">Search challenge by name:</Label>
 			<div className="relative w-full">
 				<Input
 					id="input-26"

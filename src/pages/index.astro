@@ -6,17 +6,27 @@ import Filter from "@/components/filter-tags";
 import ChallengesRender from "@/components/challenges-render";
 import Footer from "@/components/footer";
 import DarkModeButtonV2 from "@/components/dark-mode-button-v2";
+import PageTitle from "@/components/PageTitle";
 ---
 
 <BaseLayout title="Interactive comments section | Frontend Mentor">
-	<div class="bg-slate-100 dark:bg-slate-950 relative min-h-screen">
+	<div class="bg-slate-100 dark:bg-slate-950 relative min-h-screen flex flex-col gap-14">
 		<div class="max-w-5xl mx-auto">
 			<div class="py-[2rem] flex gap-8 justify-between items-start">
 				<section class="flex flex-col gap-4">
-					<h1 class="text-4xl font-black text-neutral-900">Frontend Mentor Challenges</h1>
-					<p class="text-base text-neutral-700 max-w-lg">
-						These are some of the challenges of the Frontend Mentor page made with react and
-						experimental tools!!
+					<h1 class="text-4xl font-black">
+						<PageTitle />
+					</h1>
+					<p
+						class="text-base text-neutral-700 dark:text-neutral-400 max-w-lg md:max-w-xl lg:max-w-2xl dark:hover:text-white hover:text-neutral-900 flex flex-col w-fit transition gap-2"
+					>
+						<span>
+							<PageTitle /> is a site made for JavaScript and Frontend Development challenges.
+						</span>
+						<span>
+							Discover a curated collection of challenges from popular sites like Frontend Mentor,
+							CodeChallenges, and more.
+						</span>
 					</p>
 				</section>
 				<DarkModeButtonV2 client:only />
@@ -26,8 +36,8 @@ import DarkModeButtonV2 from "@/components/dark-mode-button-v2";
 				<Filter client:only />
 			</div>
 			<ChallengesRender client:only />
-			<Footer client:only />
 		</div>
+		<Footer client:only />
 	</div>
 </BaseLayout>
 
