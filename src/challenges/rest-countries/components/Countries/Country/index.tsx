@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import type { Country as CountryType } from "../../../types/Api.js";
 import CountryLabel from "../../CountryLabel.js";
 import { useNumberFormat } from "../../../hooks/useNumberFormat.js";
@@ -10,7 +9,7 @@ export default function Country({ country }: { country: CountryType }) {
 	const countryPopulation = useNumberFormat(country.population);
 
 	return (
-		<Link to={`${AllRoutes.restCountries}/${sanitizedName}`}>
+		<a href={`${AllRoutes.restCountries}/${sanitizedName}`}>
 			<div className="mx-auto w-72 rounded-lg shadow-md transition hover:shadow-lg dark:border dark:border-transparent dark:hover:border-[var(--rest-very-dark-blue)]">
 				<img
 					src={country.flag}
@@ -27,6 +26,6 @@ export default function Country({ country }: { country: CountryType }) {
 					</div>
 				</div>
 			</div>
-		</Link>
+		</a>
 	);
 }
