@@ -10,7 +10,6 @@ export default function BranchesCount() {
 			if (branchesCount !== null) return; // Evitar hacer la solicitud si ya se tiene el valor
 
 			try {
-				console.log("Fetching branches count...");
 				const response = await axios.get(
 					"https://api.github.com/repos/mrLuisFer/js-challenges-hub/branches"
 				);
@@ -20,8 +19,6 @@ export default function BranchesCount() {
 				}
 
 				const data = response.data;
-				console.log("Branches count fetched successfully.");
-
 				setBranchesCount(data.length); // Asumiendo que la respuesta tiene la estructura esperada
 			} catch (err) {
 				console.error("Error fetching branches count:", err);

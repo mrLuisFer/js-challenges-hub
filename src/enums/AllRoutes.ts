@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 export enum AllRoutes {
-	ageCalculator = "/age-calculator",
-	interactiveComments = "/interactive-comments",
-	qrCard = "/qr-card",
+	ageCalculator = "/challenge/age-calculator",
+	interactiveComments = "/challenge/interactive-comments",
+	qrCard = "/challenge/qr-card",
 	root = "/",
 	all = "*",
-	ipAddress = "/ip-tracker",
-	restCountries = "/rest-countries",
+	ipAddress = "/challenge/ip-tracker",
+	restCountries = "/challenge/rest-countries",
 	challenges = "/challenges",
 }
 

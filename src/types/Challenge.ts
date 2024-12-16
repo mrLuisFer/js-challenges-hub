@@ -1,3 +1,4 @@
+import type { AllRoutes } from "@/enums/AllRoutes";
 import type { Level } from "./Level";
 
 export type Challenge = {
@@ -8,3 +9,5 @@ export type Challenge = {
 	tags: string[];
 	route?: string;
 };
+
+export type ChallengeTitles = keyof typeof AllRoutes;

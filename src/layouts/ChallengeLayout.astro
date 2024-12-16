@@ -1,0 +1,49 @@
+---
+import "@/styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="/favicon-mentor.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-mentor.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		rel="stylesheet"
+		href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+		crossorigin=""
+	/>
+</head>
+<body>
+<main>
+	<slot />
+	<!-- your content is injected here -->
+</main>
+<Analytics />
+<script is:inline>
+	if (typeof window !== "undefined") {
+		const value = localStorage.getItem("key");
+	}
+</script>
+<script
+	src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+	integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+	crossorigin=""
+	is:inline></script>
+</body>
+</html>

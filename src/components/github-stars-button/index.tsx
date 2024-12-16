@@ -18,7 +18,6 @@ export default function GitHubStarsButton() {
 	useEffect(() => {
 		const fetchStars = async () => {
 			try {
-				console.log("Fetching stars...");
 				const response = await axios.get(
 					"https://api.github.com/repos/mrluisfer/js-challenges-hub"
 				);
@@ -26,11 +25,10 @@ export default function GitHubStarsButton() {
 					throw new Error("Invalid response status.");
 				}
 				const data = response.data as GitHubRepository;
-				console.log("Stars fetched successfully.");
 				setRepositoryData(data);
 			} catch (err) {
-				console.error(err);
 				setError("Error fetching repository data.");
+				throw new Error(JSON.stringify(err));
 			} finally {
 				setLoading(false);
 			}
@@ -39,7 +37,6 @@ export default function GitHubStarsButton() {
 		fetchStars();
 	}, []);
 
-	console.log({ error });
 	if (error) return null;
 
 	if (loading) {
