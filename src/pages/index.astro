@@ -1,19 +1,21 @@
 ---
 // Welcome to Astro! Everything between these triple-dash code fences
-import SearchBar from '@/components/search-bar/SearchBar';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Filter from '@/components/filter-tags';
-import ChallengesRender from 'src/components/challenges-list';
-import Footer from '@/components/footer';
-import DarkModeButtonV2 from '@/components/dark-mode-button-v2';
-import PageTitle from '@/components/PageTitle';
-import GitHubStarButton from '@/components/github-stars-button';
+import SearchBar from "@/components/search-bar/SearchBar";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Filter from "@/components/filter-tags";
+import ChallengesRender from "src/components/challenges-list";
+import Footer from "@/components/footer";
+import DarkModeButtonV2 from "@/components/dark-mode-button-v2";
+import PageTitle from "@/components/PageTitle";
+import GitHubStarButton from "@/components/github-stars-button";
+import Blob from "@/components/ui/blob";
 ---
 
 <BaseLayout title="JSChallenges Hub">
-	<div class="bg-slate-100 dark:bg-slate-950 relative min-h-screen flex flex-col gap-14">
-		<div class="max-w-5xl mx-auto">
-			<div class="py-[2rem] flex gap-8 justify-between items-start">
+	<div class="relative min-h-screen flex flex-col gap-14">
+		<Blob className="top-0 left-0 fill-yellow-100 dark:fill-neutral-700 dark:opacity-[0.1]" />
+		<div class="max-w-5xl md:w-[64rem] mx-auto">
+			<header class="py-[2rem] flex gap-8 justify-between items-start">
 				<section class="flex flex-col gap-4">
 					<h1 class="text-4xl font-black">
 						<PageTitle />
@@ -34,7 +36,7 @@ import GitHubStarButton from '@/components/github-stars-button';
 					<GitHubStarButton client:only />
 					<DarkModeButtonV2 client:only />
 				</section>
-			</div>
+			</header>
 			<div class="flex items-end justify-between pt-4 gap-12">
 				<SearchBar client:only />
 				<Filter client:only />
