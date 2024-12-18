@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CircleDot, Star } from "lucide-react";
+import { CircleDot } from "lucide-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import type { GitHubRepository } from "@/types/GitHubRepository";
@@ -9,6 +9,7 @@ import GitHubIcon from "./GitHubIcon";
 import BranchesCount from "./BranchesCount";
 import LanguagesTags from "./LanguagesTags";
 import { Separator } from "../ui/separator";
+import GitHubStar from "./GitHubStar";
 
 export default function GitHubStarsButton() {
 	const [repositoryData, setRepositoryData] = useState<GitHubRepository | undefined>(undefined);
@@ -57,7 +58,7 @@ export default function GitHubStarsButton() {
 							rel="noopener noreferrer"
 						>
 							<div className="mr-1 flex h-full items-center gap-2">
-								<Star className="-ms-1 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+								<GitHubStar />
 								<Separator className="h-full w-px opacity-20" />
 							</div>
 							<span className="flex items-baseline gap-2">
