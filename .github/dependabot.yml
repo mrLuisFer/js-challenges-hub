@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pnpm" # Ecosistema de paquetes (puede ser npm, yarn, pip, etc.)
+  - package-ecosystem: "npm" # Ecosistema de paquetes (puede ser npm, yarn, pip, etc.)
     directory: "/" # Ubicación del archivo package.json
     schedule:
       interval: "weekly" # Frecuencia de actualización (puede ser daily, weekly o monthly)
