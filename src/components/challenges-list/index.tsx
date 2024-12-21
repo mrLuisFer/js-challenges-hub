@@ -1,6 +1,7 @@
 import { useChallengesStore } from "@/stores/challengesStore.js";
 import NotFound from "./NotFound.js";
 import ChallengeCard from "./challenge-card";
+import BuildingMoreCard from "./BuildingMoreCard.js";
 
 export default function ChallengesRender() {
 	const { filteredChallenges } = useChallengesStore();
@@ -8,7 +9,8 @@ export default function ChallengesRender() {
 	return (
 		<>
 			{filteredChallenges.length ? (
-				<section className="pt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center h-full">
+				<section className="grid h-full justify-center gap-4 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+					<BuildingMoreCard />
 					{filteredChallenges.map((challenge, index) => (
 						<ChallengeCard key={index} challengeInfo={challenge} index={index} />
 					))}
