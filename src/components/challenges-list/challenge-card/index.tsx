@@ -3,6 +3,7 @@ import ChallengeCardThumbnail from "./components/Thumbnail";
 import ChallengeCardHeader from "./components/Header";
 import ChallengeCardContent from "./components/Content";
 import ChallengeCardTags from "./components/Tags";
+import Container from "./components/Container";
 
 export default function ChallengeCard({
 	challengeInfo: challenge,
@@ -13,10 +14,7 @@ export default function ChallengeCard({
 }) {
 	return (
 		<a href={challenge.route ?? ""} key={index} className="animate-in">
-			<article
-				key={index}
-				className="group max-w-80 scale-100 rounded-md border-2 border-neutral-300 border-opacity-50 bg-white filter transition-all hover:border-opacity-75 hover:shadow-md hover:shadow-yellow-100 active:scale-95 active:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-950"
-			>
+			<Container>
 				{challenge?.image ? (
 					<ChallengeCardThumbnail
 						src={challenge.image || ""}
@@ -29,7 +27,7 @@ export default function ChallengeCard({
 					<ChallengeCardContent description={challenge.description} />
 					<ChallengeCardTags tags={challenge.tags} />
 				</div>
-			</article>
+			</Container>
 		</a>
 	);
 }
