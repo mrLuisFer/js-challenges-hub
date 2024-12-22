@@ -19,6 +19,7 @@ export const challengesInitialState: Challenge[] = [
 		image:
 			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/jmzygkuazktqtg2akkkx.jpg",
 		route: AllRoutes.ageCalculator,
+		originUrl: "https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q",
 	},
 	{
 		title: "Interactive Comments Section",
@@ -29,6 +30,7 @@ export const challengesInitialState: Challenge[] = [
 		image:
 			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/v9wskl4mnbt5gbxm4o2r.jpg",
 		route: AllRoutes.interactiveComments,
+		originUrl: "https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9",
 	},
 	{
 		title: "QR code component",
@@ -39,6 +41,7 @@ export const challengesInitialState: Challenge[] = [
 		route: AllRoutes.qrCard,
 		image:
 			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/cybxdhr4wewlscvco9dd.jpg",
+		originUrl: "https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H",
 	},
 	{
 		title: "Ip Address Tracker",
@@ -49,6 +52,7 @@ export const challengesInitialState: Challenge[] = [
 		route: AllRoutes.ipAddress,
 		image:
 			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/ld4kxbjoxpqpjenak8w6.jpg",
+		originUrl: "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
 	},
 	{
 		title: "REST Countries API with color theme switcher",
@@ -59,6 +63,8 @@ export const challengesInitialState: Challenge[] = [
 		route: AllRoutes.restCountries,
 		image:
 			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/wirxeocmd6tpnn9c5oqc.jpg",
+		originUrl:
+			"https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
 	},
 ];
 

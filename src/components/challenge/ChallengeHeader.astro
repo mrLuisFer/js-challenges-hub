@@ -1,0 +1,30 @@
+---
+import { ChevronLeft } from "lucide-react";
+import PageTitle from "../PageTitle";
+import ChallengeNavigation from "./ChallengeNavigation";
+
+interface Props {
+	challengeName: string;
+}
+
+const { challengeName } = Astro.props;
+
+const formattedChallengeName = challengeName.replace(/-/g, " ");
+---
+
+<header class="py-6 flex items-center justify-between px-6">
+	<a
+		class="p-1 flex items-center gap-2 justify-center hover:bg-neutral-100 rounded-md transition bg-white"
+		href="/"
+		title="Go to home"
+	>
+		<ChevronLeft />
+		<h1 class="font-extrabold text-2xl">
+			<PageTitle />
+		</h1>
+	</a>
+	<p class="text-lg font-semibold ml-4 capitalize">
+		{formattedChallengeName}
+	</p>
+	<ChallengeNavigation challengeName={challengeName} client:only />
+</header>

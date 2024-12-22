@@ -8,6 +8,7 @@ export type Challenge = {
 	level: Level;
 	tags: string[];
 	route?: string;
+	originUrl?: string;
 };
 
 export type ChallengeTitles = keyof typeof AllRoutes;

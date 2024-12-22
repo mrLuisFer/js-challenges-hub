@@ -1,12 +1,13 @@
 ---
-import { challengesInitialState } from '@/constants/challenges';
-import { clearChallengeRoute } from '@/utils/clearChallengeRoute';
-import ChallengeRender from '../../components/ChallengeRender';
-import ChallengeLayout from '@/layouts/ChallengeLayout.astro';
+import { challengesInitialState } from "@/constants/challenges";
+import { clearChallengeRoute } from "@/utils/clearChallengeRoute";
+import ChallengeRender from "../../components/challenge/ChallengeRender";
+import ChallengeLayout from "@/layouts/ChallengeLayout.astro";
+import ChallengeHeader from "@/components/challenge/ChallengeHeader.astro";
 
 export function getStaticPaths() {
 	const challengesNames = challengesInitialState.map((challenge) => {
-		const routeParam = clearChallengeRoute(challenge?.route || '');
+		const routeParam = clearChallengeRoute(challenge?.route || "");
 		return {
 			params: {
 				slug: routeParam,
@@ -14,12 +15,13 @@ export function getStaticPaths() {
 		};
 	});
 
-	return challengesNames.filter((challenge) => challenge.params.slug !== '');
+	return challengesNames.filter((challenge) => challenge.params.slug !== "");
 }
 
 const { slug } = Astro.params;
 ---
 
 <ChallengeLayout title={`JSChallenge | ${slug}`}>
+	<ChallengeHeader challengeName={slug} />
 	<ChallengeRender client:only challengeName={slug} />
 </ChallengeLayout>
