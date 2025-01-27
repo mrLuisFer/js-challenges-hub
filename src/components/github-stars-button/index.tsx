@@ -63,7 +63,7 @@ export default function GitHubStarsButton() {
 							</div>
 							<span className="flex items-baseline gap-2">
 								Stars
-								<span className="text-xs text-primary-foreground/60 dark:text-neutral-500">
+								<span className="text-xs dark:text-neutral-500">
 									{repositoryData?.stargazers_count}
 								</span>
 							</span>

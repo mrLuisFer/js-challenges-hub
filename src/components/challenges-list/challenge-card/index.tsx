@@ -13,7 +13,11 @@ export default function ChallengeCard({
 	index: number;
 }) {
 	return (
-		<a href={challenge.route ?? ""} key={index} className="animate-in">
+		<a
+			href={challenge.route ?? ""}
+			key={index}
+			className="scale transition animate-in hover:scale-105"
+		>
 			<Container>
 				{challenge?.image ? (
 					<ChallengeCardThumbnail
